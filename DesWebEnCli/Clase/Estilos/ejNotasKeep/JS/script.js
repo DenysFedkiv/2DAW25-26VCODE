@@ -1,3 +1,6 @@
+let contNotasMod = 0;
+let contNotasBoradas = 0;
+
 function crearNota() {
     let tituloNota = document.getElementById("tituloNota");
     let textNota = document.getElementById("textNota");
@@ -35,11 +38,14 @@ function crearNota() {
     
     if(prioridadNota.checked) {
         nota.classList.add("notaDest");
+        nota.dataset.index = document.querySelectorAll(".notaDest:not(.nB)").length;
         contNotasDest.append(nota);
     }
     else {
+        nota.dataset.index = document.querySelectorAll(".nota:not(.nB)").length;
         contNotas.append(nota);
     }
+
     
     resetNotaForms();
 }
@@ -95,7 +101,54 @@ function statsNotaForm() {
         crearNota.style.display = "none";
         buscarNota.style.display = "none";
         estadisticaNotaNota.style.display = "block";
+
+        let estadisticaNotaCont = document.getElementById("estadisticasResultado");
+
+        estadisticaNotaCont.innerHTML = "";
+
+        let notasActivas = document.querySelectorAll(".nota:not(.nB)").length;
+        
+        let notasPrioridad = document.querySelectorAll(".notaDest:not(.nB)").length;
+
+        let notasSinPrioridad = notasActivas - notasPrioridad;
+
+        let letrasNotasActivas = 0;
+        
+        for(let nota of document.querySelectorAll(".nota:not(.nB)")) {
+            letrasNotasActivas += nota.querySelector("h2").innerText.length;
+            letrasNotasActivas += nota.querySelector("p").innerText.length;
+        }
+
+        let mediaLetras = parseInt(letrasNotasActivas / notasActivas);
+
+        let ul = document.createElement("ul"); 
+
+        let liNA = document.createElement("li");
+        liNA.innerText = "Notas activas: " + notasActivas;
+        let liNB = document.createElement("li");
+        liNB.innerText = "Notas borradas: " + contNotasBoradas;
+        let liNM = document.createElement("li");
+        liNM.innerText = "Notas modificadas: " + contNotasMod;
+        let liNP = document.createElement("li");
+        liNP.innerText = "Notas con prioridad: " + notasPrioridad;
+        let liNSP = document.createElement("li");
+        liNSP.innerText = "Notas sin prioridad: " + notasSinPrioridad;
+        let liNL = document.createElement("li");
+        liNL.innerText = "Numero de letras de notas activas: " + letrasNotasActivas;
+        let liNML = document.createElement("li");
+        liNML.innerText = "Media de letras de notas activas: " + mediaLetras;
+
+        ul.append(liNA);
+        ul.append(liNB);
+        ul.append(liNM);
+        ul.append(liNP);
+        ul.append(liNSP);
+        ul.append(liNL);
+        ul.append(liNML);
+
+        estadisticaNotaCont.append(ul);
     }
+
 }
 
 function resetNotaForms() {
@@ -117,6 +170,7 @@ function buscarNota() {
     let formBuscar = document.getElementById("formBuscar");
 
     formBuscar.style.display = "none";
+    resultadoBuscar.style.display = "block";
 
     let notas = [];
 
@@ -185,52 +239,52 @@ function notaMod(e) {
     let div = document.createElement("div");
 
     div.id = "modNotaCont";
-    div.style.width = "30%";
-    div.style.backgroundColor = "gray";
-    div.style.position = "fixed";
-    div.style.top = "30%";
-    div.style.left = "35%";
 
-    div.dataset.index = e.target.parentElement.dataset.index;
+    div.dataset.index = e.currentTarget.parentElement.dataset.index;
 
     let titulo = document.createElement("input");
     let text = document.createElement("textarea");
     let color = document.createElement("select");
     let prioridad = document.createElement("input");
     let guardar = document.createElement("button");
+    let borrar = document.createElement("button");
 
     titulo.id = "tituloMod";
-    titulo.style.display = "block";
-    titulo.value = e.target.parentElement.querySelector("h2").innerText;
+    titulo.value = e.currentTarget.parentElement.querySelector("h2").innerText;
 
     text.id = "textMod";
-    text.style.display = "block";
-    text.value = e.target.parentElement.querySelector("p").innerText;
+    text.setAttribute("rows", "4");
+    text.value = e.currentTarget.parentElement.querySelector("p").innerText;
     
     color.id = "colorMod";
-    color.style.display = "block";
     for(let i = 1; i <= 6; i++) {
         let option = document.createElement("option");
         option.innerText = "Color " + i;
         option.value = "Color" + i;
         color.append(option);
     }
-    color.value = e.target.parentElement.classList[1].substring(4);
+    color.value = e.currentTarget.parentElement.classList[1].substring(4);
     
     prioridad.id = "prioridadMod";
     prioridad.style.display = "block";
     prioridad.type = "checkbox";
-    prioridad.checked = e.target.parentElement.classList.contains("notaDest");
+    prioridad.checked = e.currentTarget.parentElement.classList.contains("notaDest");
 
     guardar.innerText = "Guardar";
+    guardar.id = "guardarMod";
     
     guardar.addEventListener("click", guardarMod);
+
+    borrar.innerText = "Borrar nota";
+    borrar.id = "borrarNota";
+    borrar.addEventListener("click", borrarNota);
 
     div.append(titulo);
     div.append(text);
     div.append(color);
     div.append(prioridad);
     div.append(guardar);
+    div.append(borrar);
 
     document.body.append(div);
 }
@@ -241,7 +295,7 @@ function guardarMod(e) {
     let color = document.getElementById("colorMod").value;
     let prioridad = document.getElementById("prioridadMod").checked;
 
-    let nota = document.querySelectorAll(".nota:not(.nB)")[e.target.parentElement.dataset.index];
+    let nota = document.querySelectorAll(".nota:not(.nB)")[e.currentTarget.parentElement.dataset.index];
     let dest = nota.classList.contains("notaDest");
 
     nota.querySelector("h2").innerText = titulo;
@@ -276,7 +330,40 @@ function guardarMod(e) {
     modNotaCont.remove();
     resetNotaForms();
     buscarNotaForm();
-    buscarNota();
+
+    let resultadoBuscar = document.getElementById("resultadoBuscar");
+    let formBuscar = document.getElementById("formBuscar");
+
+    formBuscar.style.display = "block";
+    resultadoBuscar.style.display = "none";
+
+    contNotasMod += 1;
 }
+
+function borrarNota(e) {
+    let nota = document.querySelectorAll(".nota:not(.nB)")[e.currentTarget.parentElement.dataset.index];
+    let modNotaCont = document.getElementById("modNotaCont");
+    
+    for(let n = parseInt(e.currentTarget.parentElement.dataset.index) + 1; n < document.querySelectorAll(".nota:not(.nB)").length; n++) {
+        document.querySelectorAll(".nota:not(.nB)")[n].dataset.index -= 1;
+    }
+
+    modNotaCont.remove();
+    nota.remove();
+    resetNotaForms();
+    buscarNotaForm();
+    buscarNota();
+    contNotasBoradas += 1;
+}
+
+function modNotaIni() {
+    let notasMod = document.querySelectorAll(".modNota");
+
+    for(let mod of notasMod) {
+        mod.addEventListener("click", notaMod);
+    }
+}
+
+modNotaIni();
 
 resetNotaForms();

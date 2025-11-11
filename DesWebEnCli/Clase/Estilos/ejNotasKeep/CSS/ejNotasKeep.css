@@ -335,6 +335,64 @@ main {
     color: white;
 }
 
+.nB {
+    width: 31%;
+    margin: 1% 1.16%;
+}
+
+#buscarNota .nB h2, #buscarNota .nB p {
+    text-align: left;
+}
+
+#estadisticasNota {
+    text-align: center;
+}
+
+#modNotaCont {
+    width: 30%;
+    position: fixed;
+    top: 30%;
+    left: 35%;
+    background-color: gray;
+    padding: 1%;
+    text-align: center;
+}
+
+#tituloMod {
+    width: 90%;
+    padding: 1%;
+    margin: 1% auto;
+    text-align: center;
+}
+
+#textMod {
+    width: 90%;
+    padding: 1%;
+    margin: 1% auto;
+    text-align: center;
+    
+}
+
+#colorMod {
+    width: 30%;
+    padding: 1%;
+    margin: 1% auto;
+    text-align: center;
+}
+
+
+#prioridadMod {
+    margin: 1% auto;
+}
+
+#guardarMod {
+    padding: 1%;
+}
+
+#borrarNota {
+    padding: 1%;
+}
+
 .modNota {
     float: right;
     cursor: pointer;
