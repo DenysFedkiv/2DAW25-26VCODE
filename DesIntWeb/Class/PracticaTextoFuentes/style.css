@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+nav a {
+    text-decoration: none;
+    word-spacing: 3.33px;  
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+article p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: justify;
+    text-overflow: ellipsis;
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+footer {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#tituloPrincipal {
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.subtitulo {
+    text-transform: capitalize;
+    text-align: center;
+    font-weight: 900;
+}
+
+#artTitulo {
+    text-align: center;
+}
+
+#artFecha {
+    text-align: right;
+}
+
+#artAutor {
+    text-align: left;
+}
+
+#listaVisitados {
+}
+
+#cita {
+    font-style: italic;
+    text-align: center;
+    letter-spacing: 1.33px;
+}
+
+
+#p1 {
+    text-indent: 20px;
+}
+
+#tachado {
+    text-decoration: line-through;
+}
+
+#p3 {
+    white-space: pre;
+}
+
+#p4 {
+    text-overflow: ellipsis;
+}
+#derechos {
+    text-align: center;
+    word-spacing: 10px;
+}
+
+#derechos span {
+    font-size: 0.7em;
+    vertical-align: top;
+
+}
+
+.parrJs {
+    color: gray;
+}

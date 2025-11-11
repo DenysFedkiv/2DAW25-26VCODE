@@ -1,0 +1,108 @@
+p {
+    width: 500px;
+    height: 100px;
+}
+
+#p1 {
+    background: linear-gradient(to bottom, red, blue);
+}
+
+#p2 {
+    background: linear-gradient(to right, red, blue);
+}
+
+#p3 {
+    background: linear-gradient(to top, red, blue);
+}
+
+#p4 {
+    background: linear-gradient(to left, red, blue);
+}
+
+#p5 {
+    background: linear-gradient(to left, red, purple, blue, cyan, green, yellow);
+}
+
+#p6 {
+    background: linear-gradient(to left, red 20%, purple 35%, blue 40%, cyan 50%, green 60%, yellow);
+}
+
+#p7 {
+    background: radial-gradient(circle, blue, green, red);
+}
+
+#p8 {
+    background: radial-gradient(
+        circle at top left,
+        #f093fb,
+        #f5576c,
+        #1a1a2e
+    );
+}
+
+#p9 {
+    background: conic-gradient(
+        red,
+        orange,
+        yellow,
+        green,
+        cyan,
+        blue,
+        magenta,
+        red
+    );
+}
+
+#p10 {
+    width: 200px;
+    height: 200px;
+    background: conic-gradient(
+        #3498db 0% 35%,
+        #e74c3c 35% 60%,
+        #2ecc71 60% 85%,
+        #f39c12 85% 100%
+    );
+    border-radius: 50%;
+    margin: 20px auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+#p11 {
+    width: 80px;
+    height: 80px;
+    background: conic-gradient(
+        from 0deg,
+        transparent 0deg 315deg,
+        #3498db 315deg 360deg
+    );
+    border-radius: 50%;
+    animation: girar 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes girar {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#p8 {
+    background: radial-gradient(
+        circle at top left,
+        #f093fb,
+        #f5576c,
+        #1a1a2e
+    );
+}
+
+#p8 {
+    background: radial-gradient(
+        circle at top left,
+        #f093fb,
+        #f5576c,
+        #1a1a2e
+    );
+}

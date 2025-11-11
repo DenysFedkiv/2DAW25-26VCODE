@@ -1,0 +1,18 @@
+p {
+    width: 500px;
+    height: 500px;
+}
+
+#p1 {
+    background-color: aqua;
+    float: right;
+}
+
+#p2 {
+    background-color: bisque;
+    float: left;
+}
+
+#p3 {
+    background-color: violet;
+}

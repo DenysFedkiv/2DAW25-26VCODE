@@ -1,0 +1,35 @@
+#formulario-principal {
+    border: 2px solid blue;
+}
+
+.titulo-importante {
+    color: red;
+    font-size: 24px;
+}
+
+.campo-obligatorio {
+    background-color: #fffde7;
+}
+
+#btn-enviar {
+    background-color: #4caf50;
+    color: white;
+}
+
+input[type="text"] {
+    border: gray;
+    padding: 5px;
+}
+
+.workshop.premium {
+    border: 2px solid purple;
+}
+
+a[href$=".pdf"] {
+    color: #795548;
+    font-weight: bold;
+}
+
+footer .campo-obligatorio {
+    background-color: transparent !important;
+}

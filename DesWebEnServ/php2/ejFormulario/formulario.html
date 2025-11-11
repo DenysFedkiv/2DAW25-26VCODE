@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="formulario.php" method="post">
+        <fieldset>
+            <legend>Datos personales</legend>
+            <label for="nombreAp">Nombre y Apellidos:</label>
+            <input type="text" name="nombreAp" id="nombreAp"><br><br>
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email"><br><br>
+            <label for="url">URL pagina personal:</label>
+            <input type="url" name="url" id="url"><br><br>
+            <span>Sexo:</span><br>
+            <input type="radio" name="sexo" id="sexoM" value="Masculino">
+            <label for="sexoM">Masculino</label><br>
+            <input type="radio" name="sexo" id="sexoF" value="Femenino">
+            <label for="sexoF">Femenino</label><br>
+            <input type="radio" name="sexo" id="sexoO" value="Otro">
+            <label for="sexoO">Otro</label><br><br>
+            <label for="convivientes">Nº de convivientes en el domicilio:</label>
+            <input type="number" name="convivientes" id="convivientes" min="0"><br><br>
+            <span>Aficiones:</span><br>
+            <input type="checkbox" name="afDeporte" id="afDeporte" value="Deporte">
+            <label for="afDeporte">Deporte</label><br>
+            <input type="checkbox" name="afMusica" id="afMusica" value="Musica">
+            <label for="afMusica">Música</label><br>
+            <input type="checkbox" name="afCine" id="afCine" value="Cine">
+            <label for="afCine">Cine</label><br>
+            <input type="checkbox" name="afLectura" id="afLectura" value="Lectura">
+            <label for="afLectura">Lectura</label><br><br>
+            <label for="menuFav">Comida favorita:</label><br>
+            <select name="menuFav[]" id="menuFav" size="4" multiple>
+                <option value="pizza">Pizza</option>
+                <option value="pasta">Pasta</option>
+                <option value="sushi">Sushi</option>
+                <option value="hamburguesa">Hamburguesa</option>
+                <option value="ensalada">Ensalada</option>
+                <option value="tacos">Tacos</option>
+                <option value="paella">Paella</option>
+            </select><br><br>
+            <input type="submit" value="Enviar">
+        </fieldset>
+    </form>
+</body>
+</html>

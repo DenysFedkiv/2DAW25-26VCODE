@@ -1,0 +1,19 @@
+p {
+    color: red;
+    font-size: 28px;
+    margin: 70px;
+}
+
+h1, h2, h3 {
+    color: blue;
+}
+
+a {
+    background-color: greenyellow;
+}
+
+input {
+    border: 1px solid;
+    padding-left: 5px;
+    padding-right: 5px;
+}

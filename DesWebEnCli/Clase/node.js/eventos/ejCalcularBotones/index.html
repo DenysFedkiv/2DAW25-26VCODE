@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            width: 5em;
+            height: 5em;
+            margin: 0.5em;
+        }
+        #nums {
+            text-align: center;
+            width: calc((4.5em * 4) + (0.25em * 7));
+            height: 5em;
+            margin: 0.5em;
+            padding-top: 2em;
+            border: 1px solid black;
+            box-sizing: border-box;
+            display: inline-block;
+            background-color: #9a9;
+        }
+
+        #resultado {
+            text-align: center;
+            width: 10em;
+            height: 5em;
+            margin: 0.5em;
+            padding-top: 2em;
+            border: 1px solid black;
+            box-sizing: border-box;
+            display: inline-block;
+        }
+
+        main {
+            box-sizing: border-box;
+            border-radius: 1.5em;
+            background-color: #333;
+            padding: 1.5em;
+            width: calc((4.5em * 5) + (0.25em * 6));
+            margin: auto;
+        }
+        </style>
+</head>
+<body>
+    <main>
+        <p id="nums"></p>
+        <br>
+        <button onclick="numero(this)" value="1">1</button>
+        <button onclick="numero(this)" value="2">2</button>
+        <button onclick="numero(this)" value="3">3</button>
+        <button onclick="operador(this)" value="/">/</button><br>
+        <button onclick="numero(this)" value="4">4</button>
+        <button onclick="numero(this)" value="5">5</button>
+        <button onclick="numero(this)" value="6">6</button>
+        <button onclick="operador(this)" value="*">*</button><br>
+        <button onclick="numero(this)" value="7">7</button>
+        <button onclick="numero(this)" value="8">8</button>
+        <button onclick="numero(this)" value="9">9</button>
+        <button onclick="operador(this)" value="-">-</button><br>
+        <button> </button>
+        <button onclick="numero(this)" value="0">0</button>
+        <button onclick="calcular(this)" value="=">=</button>
+        <button onclick="operador(this)" value="+">+</button><br>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

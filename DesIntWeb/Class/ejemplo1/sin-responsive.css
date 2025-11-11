@@ -1,0 +1,138 @@
+/*
+5º en descomentar
+*/
+*{
+    margin: 0px;
+    margin: 0px;
+}
+/*
+Centramos contenedor
+1º en descomentar
+*/
+#contenedor{
+    width: 1000px;
+    background-color: red;
+    margin: 0px auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/*
+2º en descomentar
+*/
+header{
+    /*
+    que ocupe el 100% del ancho que lo contiene
+    */
+    width: 1000px;
+    background-color: lightblue;
+    color: #333;
+    height: 150px;
+    /*
+    Centramos el texto verticalmente
+    */
+    line-height: 150px;
+    /*
+    Centramos el texto horizontalmente
+    */
+    text-align: center;
+}
+
+
+/*
+3º en descomentar
+*/
+aside{
+    /*
+    Esto no es responsive debemos cambiarlo a porcentaje
+    */
+    width: 250px;
+
+    /*
+    Para poner la barra a la izquierda
+    */
+    float: left;
+
+    min-height: 700px;
+    line-height: 700px;
+    text-align: center;
+    background-color: #ccc;
+
+}
+
+/*
+4º en descomentar
+*/
+.limpiarFloat{
+    float: none;
+    clear: both;
+}
+
+/*
+6º en descomentar
+*/
+#articulos{
+    width: 750px;
+    min-height: 700px;
+    float: left;
+    background-color: lemonchiffon;
+
+}
+
+@media (max-width: 1024px) {
+    #contenedor{
+        background-color: lightgray;
+    }
+
+    header{
+        background-color: chartreuse;
+    }
+
+    aside{
+        background-color: #bb7777;
+    }
+
+    #articulos{
+        background-color: gold;
+    }
+}
+
+@media (max-width: 768px) {
+    #contenedor{
+        background-color: aquamarine;
+        width: 100%;
+    }
+
+    header{
+        background-color: beige;
+        width: 100%;
+    }
+
+    aside{
+        background-color: #b3bb77;
+        width: 25%;
+        font-size: small;
+    }
+
+    #articulos{
+        background-color: darkorchid;
+        width: 75%;
+    }
+}
+
+@media (max-width: 480px) {
+    aside{
+        float: none;
+        width: 100%;
+        font-size: large;
+    }
+
+    #articulos{
+        float: none;
+        width: 100%;
+        text-align: center;
+    }
+
+    footer {
+        text-align: center;
+    }
+}

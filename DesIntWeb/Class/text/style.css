@@ -1,0 +1,64 @@
+#parrafo2 {
+    text-transform: uppercase;
+    color: cornflowerblue;
+}
+
+#parrafoR {
+    border: 1px solid;
+    text-align: right;
+}
+
+#parrafoL {
+    border: 1px solid;
+    text-align: left;
+}
+
+#parrafoC {
+    border: 1px solid;
+    text-align: center;
+}
+
+#parrafoJ {
+    border: 1px solid;
+    text-align: justify;
+}
+
+#parrafo1 {
+    text-decoration: line-through white;
+}
+
+#parrafo2 {
+    text-indent: 30px;
+}
+
+#parrafo3 {
+    word-spacing: 10px;
+    letter-spacing: 5px;
+}
+
+#parrafo4 {
+    height: 5vh;
+    width: 25vw;
+    text-overflow: clip;
+}
+
+#parrafo5 {
+    
+}
+
+#parrafo6 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#parrafo6 span {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#parrafo7 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+#parrafo8 {
+    font-style: italic;
+}
