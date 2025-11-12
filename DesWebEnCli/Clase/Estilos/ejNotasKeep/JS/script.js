@@ -54,7 +54,6 @@ function crearNotaForm() {
     let crearNota = document.getElementById("crearNota");
     let buscarNota = document.getElementById("buscarNota");
     let estadisticaNotaNota = document.getElementById("estadisticasNota");
-    let fromCont = document.getElementById("formCont");
     
     if(crearNota.style.display == "block") {
         resetNotaForms();

@@ -1,0 +1,140 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos base para MÓVIL */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #333;
+    padding: 15px;
+}
+
+.contenedor {
+    max-width: 100%;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 16px;
+    margin-top: 15px;
+    margin-bottom: 8px;
+}
+
+p {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.subtitulo {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.nota {
+    font-size: 12px;
+    color: #999;
+    margin-top: 30px;
+}
+
+/* TABLET - Pantallas de 768px o más */
+@media (min-width: 768px) {
+    body {
+        font-size: 18px;
+        line-height: 1.8;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 30px;
+        margin-bottom: 14px;
+    }
+
+    h2 {
+        font-size: 24px;
+        margin-top: 24px;
+        margin-bottom: 12px;
+    }
+
+    h3 {
+        font-size: 20px;
+        margin-top: 18px;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 17px;
+        margin-bottom: 16px;
+    }
+
+    .subtitulo {
+        font-size: 20px;
+        margin-bottom: 24px;
+    }
+
+    .nota {
+        font-size: 14px;
+        margin-top: 36px;
+    }
+}
+
+/* DESKTOP - Pantallas de 1024px o más */
+@media (min-width: 1024px) {
+    body {
+        font-size: ;
+        line-height: ;
+        padding: ;
+    }
+
+    .contenedor {
+        max-width: ;
+        margin: ;
+    }
+
+    h1 {
+        font-size: ;
+        margin-bottom: ;
+    }
+
+    h2 {
+        font-size: ;
+        margin-top: ;
+        margin-bottom: ;
+    }
+
+    h3 {
+        font-size: ;
+        margin-top: ;
+        margin-bottom: ;
+    }
+
+    p {
+        font-size: ;
+        margin-bottom: ;
+    }
+
+    .subtitulo {
+        font-size: ;
+        margin-bottom: ;
+    }
+
+    .nota {
+        font-size: ;
+        margin-top: ;
+    }
+}

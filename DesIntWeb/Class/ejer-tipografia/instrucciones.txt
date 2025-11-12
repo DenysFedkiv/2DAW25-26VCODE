@@ -1,0 +1,4 @@
+Pulsa boton derecho en enunciado abrir con
+Cualquier navegador pro ejemplo firefox.
+
+No lo abras con vscode

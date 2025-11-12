@@ -6,8 +6,8 @@
         $precio = $_POST["precio"];
         $cantidad = $_POST["cantidad"] ?? 0;
 
-        $stmt = $pdo->prepare("INSERT INTO productos (id, nombre, precio, stock) VALUES (?, ?, ?, ?)");
-        $stmt->execute([1, $nombre, $precio, $cantidad]);
+        $stmt = $pdo->prepare("INSERT INTO productos (nombre, precio, stock) VALUES (?, ?, ?)");
+        $stmt->execute([$nombre, $precio, $cantidad]);
         header("Location: index.php");
         exit;
     }
