@@ -1,0 +1,24 @@
+1.ESTE ZIP TIENE CASI TODO LO NECESARIO PARA LEVANTAR 2 CONTENEDORES: PHP (con PDO) Y MYSQL...
+
+¿QUÉ FICHERO FALTA?
+
+2. AÑADE ESE FICHERO
+
+3. CREA LA ESTRUCTURA NECESARIA Y UN INDEX.PHP (FÍJATE EN EL .YML PARA VER EN QUÉ CARPETA TIENE QUE ESTAR)
+
+3. LEVANTA LOS CONTENEDORES (docker compose up -d)
+
+4. ENTRA EN LA PESTAÑA EXEC DEL CONTENEDOR DE MYSQL DEL DOCKER DESKTOP. La pestaña Exec de Docker Desktop te permite ejecutar comandos dentro de un contenedor en ejecución, como si estuvieras dentro de un terminal dentro de ese contenedor.
+
+5. EJECUTA AHÍ: myqsl -u root -p
+
+6. ESCRIBE LA CONTRASEÑA: root  (O LA QUE HAYAS PUESTO TÚ EN .ENV)
+
+7. EJECUTA: show databases;
+
+8. EJECUTA: use obras_arte;
+
+9. EJECUTA: show tables;    ¿SE MUESTRA LA TABLA obras? 
+
+10. EJECUTA UN SELECT * FROM obras;
+
