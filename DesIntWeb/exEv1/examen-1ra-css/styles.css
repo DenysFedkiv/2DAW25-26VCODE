@@ -1,0 +1,261 @@
+@font-face {
+    font-family: Nevis;
+    src: url(./fonts/nevis.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(./img/patron.png);
+    background-position: center;
+    background-repeat: repeat;
+}
+
+#cabecera {
+    width: 100%;
+    text-align: center;
+}
+
+#cabecera img {
+    width: 10%;
+}
+
+#cabecera p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-shadow: 2px 2px 2px lightgray;
+    letter-spacing: 2px;
+    line-height: 2;
+    max-height: 300px;
+    margin: auto;
+}
+
+#nav {
+    width: 100%;
+    text-align: center;
+    background-color: black;
+    margin-bottom: 3%;
+    height: 3rem;
+}
+
+.linkCont {
+    text-align: center;
+    float: left;
+    border-right: 1px solid white;
+    width: 10vw;
+}
+
+.linkCont:nth-child(1) {
+    margin-left: 15vw;
+}
+
+.linkCont:nth-last-child(1) {
+    border: 0;
+}
+
+#nav a {
+    color: white;
+    text-decoration: none;
+    padding: 1rem;
+    display: block;
+}
+
+#sideBr {
+    clear: both;
+    float: left;
+    width: 15%;
+    height: 89vh;
+    margin-left: 7.5%;
+    position: sticky;
+    top: 1vh;
+    background-color: white;
+    border: 1px solid gray;
+    box-shadow: 0px 0px 3px black;
+    padding: 0.8%;
+}
+
+#sideBr * {
+    display: block;
+    margin: auto;
+}
+
+
+#sideBr strong {
+    background-color: antiquewhite;
+    font-size: large;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#sideBr label {
+    text-align: center;
+}
+
+#sideBr .separador {
+    border-bottom: 3px dotted black;
+    margin: 5%;
+}
+
+#sideBr a {
+    color: green;
+    text-decoration: none;
+}
+
+#sideBr input {
+    margin-bottom: 3%;
+}
+
+.cuadros {
+    float: right;
+    width: 60%;
+    margin-right: 7.5%;
+    background-color: white;
+    border: 1px solid gray;
+    box-shadow: 0px 0px 3px black;
+    margin-bottom: 3%;
+    padding: 2%;
+    height: 60vh;
+    overflow-y: scroll;
+}
+
+.cuadros ul {
+    
+}
+
+.cuadros h2 {
+    text-align: center;
+    border-bottom: 2px dotted black;
+    padding-bottom: 2%;
+    margin-bottom: 2%;
+}
+
+.cuadros a {
+    color: saddlebrown;
+    text-decoration: none;
+}
+
+.cuadros .ficheroImg {
+    width: 1.2rem;
+    float: left;
+}
+
+.cuadros li {
+    list-style: none;
+    margin-bottom: 2%;
+}
+
+#pegatinaL1 {
+    position: absolute;
+    top: 40.5%;
+    right: 60%;
+}
+
+#pegatinaR1 {
+    position: absolute;
+    top: 40.5%;
+    right: 12.5%;
+}
+#pegatinaL2 {
+    position: absolute;
+    top: 107%;
+    right: 60%;
+}
+
+#pegatinaR2 {
+    position: absolute;
+    top: 107%;
+    right: 12.5%;
+}
+#pegatinaL3 {
+    position: absolute;
+    top: 173.5%;
+    right: 60%;
+}
+
+#pegatinaR3 {
+    position: absolute;
+    top: 173.5%;
+    right: 12.5%;
+}
+
+#c3 {
+    margin-bottom: 8%;
+}
+
+#postit {
+    background-color: yellow;
+    width: 50%;
+    height: 80%;
+    position: sticky;
+    margin: auto;
+    top: 10%;
+    text-align: center;
+}
+
+#postit p {
+    position: relative;
+    top: 50%;
+}
+
+#c3 h2 {
+    margin-top: -35%;
+}
+
+#pegatinaC3L1 {
+    width: 20%;
+    position: relative;
+    top: -20%;
+    right: 11%;
+}
+#pegatinaC3R1 {
+    width: 20%;
+    position: relative;
+    top: -20%;
+    left: 53%;
+}
+#pegatinaC3L2 {
+    width: 20%;
+    position: relative;
+    top: 75%;
+    right: 53%;
+}
+#pegatinaC3R2 {
+    width: 20%;
+    position: relative;
+    top: 75%;
+    left: 11%;
+}
+
+#footer {
+    clear: both;
+    text-align: center;
+    padding: 1%;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    background: linear-gradient(gray, black, gray);
+    color: white;
+    font-family: Nevis;
+}
+
+@media (max-width: 700px) {
+    #nav {
+        height: 6rem;
+    }
+
+    #nav .linkCont:nth-child(3n+4) {
+        clear: both;
+        margin-left: 15vw;
+    }
+
+    .linkCont {
+        width: 20vw;
+    }
+
+    .linkCont:nth-child(3n+3) {
+        border: 0;
+    }
+}

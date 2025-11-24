@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <button id="crearPedido">Crear pedido</button>
+        <button id="mostrarPedidos">Mostrar pedidos</button>
+        <button id="mostrarInventario">Mostrar Inventario</button>
+        <button id="statsGenerales">Estadisticas generales</button>
+        <button id="statsBeneficios">Estadisticas de beneficios</button>
+    </nav>
+    <main>
+        <div id="formCrearPedido">
+            <select name="tamanoCrear" id="tamanoCrear">
+                <option value="small">Pequeño</option>
+                <option value="medium">Mediano</option>
+                <option value="large">Grande</option>
+            </select>
+            <select name="tipoCrear" id="tipoCrear">
+                <option value="solo">Solo</option>
+                <option value="espresso">Espresso</option>
+                <option value="latte">Latte</option>
+                <option value="macchiato">Macchiato</option>
+            </select>
+            <input type="checkbox" class="toppingsCrear" name="topCacaoCrear" id="topCacaoCrear" value="cacao">
+            <input type="checkbox" class="toppingsCrear" name="topVainillaCrear" id="topVainillaCrear" value="vainilla">
+            <input type="checkbox" class="toppingsCrear" name="topCarameloCrear" id="topCarameloCrear" value="caramelo">
+            <input type="checkbox" class="toppingsCrear" name="topCanelaCrear" id="topCanelaCrear" value="canela">
+            <input type="checkbox" class="toppingsCrear" name="topNataCrear" id="topNataCrear" value="nata">
+            <input type="checkbox" class="toppingsCrear" name="topSiropeCrear" id="topSiropeCrear" value="sirope">
+            <input type="checkbox" class="toppingsCrear" name="topChocolateCrear" id="topChocolateCrear" value="chocolate">
+            <input type="checkbox" class="toppingsCrear" name="topAvellanaCrear" id="topAvellanaCrear" value="avellana">
+            <button id="btnCrearPedido">Añadir</button>
+        </div>
+        <div id="pedidos">
+
+        </div>
+        <div id="inventario">
+
+        </div>
+        <div id="statsGeneralesCont">
+
+        </div>
+        <div id="statsBeneficiosCont">
+
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
