@@ -1,0 +1,45 @@
+.hijos {
+    width: 200px;
+    height: 200px;
+    background-color: gray;
+}
+
+#flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+}
+
+#flex2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 2px;
+    margin-top: 1%;
+}
+
+#flex3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2px;
+    margin-top: 1%;
+}
+
+#hijo21 {
+    background-color: black;
+}
+#hijo22 {
+    background-color: aqua;
+    order: 1;
+}
+#hijo23 {
+    background-color: blue;
+    order: -1;
+}
+#hijo24 {
+    background-color: yellowgreen;
+}
