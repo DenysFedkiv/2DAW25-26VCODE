@@ -1,5 +1,8 @@
 <?php
     require_once("config.php");
+    require_once("autorizar.php");
+
+    validarToken();
     
     $metodo = $_SERVER['REQUEST_METHOD'];
     
@@ -32,6 +35,8 @@
     }
 
     function listarProducto($id, $pdo) {
+        validar_id($id);
+
         $consulta = "SELECT * FROM productos WHERE id=?";
 
         $stmt = $pdo->prepare($consulta);
@@ -140,17 +145,20 @@
             $error[] = "No hay datos del producto";
         }
         else {
-            if(!isset($datosProducto["id"])||!isset($datosProducto["nombre"])||!isset($datosProducto["stock"])||!isset($datosProducto["stock"])) {
+            validar_id($datosProducto["id"] ?? "");
+
+            if(!isset($datosProducto["nombre"])||!isset($datosProducto["stock"])||!isset($datosProducto["stock"])) {
                 http_response_code(400);
                 echo json_encode(["mensaje"=>"Faltan datos de producto"]);
                 exit;
             }
 
-            if(!$datosProducto["id"]) {
-                http_response_code(400);
-                echo json_encode(["mensaje"=>"El id no es correcto"]);
-                exit;
-            }
+            // if(!$datosProducto["id"]) {
+            //     http_response_code(400);
+            //     echo json_encode(["mensaje"=>"El id no es correcto"]);
+            //     exit;
+            // }
+
 
             $consulta = "SELECT * FROM productos WHERE id=?";
             
@@ -220,17 +228,19 @@
             $error[] = "No hay datos del producto";
         }
         else {
-            if(!isset($datosProducto["id"])) {
-                http_response_code(400);
-                echo json_encode(["mensaje"=>"Faltan datos de producto"]);
-                exit;
-            }
+            // if(!isset($datosProducto["id"])) {
+            //     http_response_code(400);
+            //     echo json_encode(["mensaje"=>"Faltan datos de producto"]);
+            //     exit;
+            // }
 
-            if(!$datosProducto["id"]) {
-                http_response_code(400);
-                echo json_encode(["mensaje"=>"El id no es correcto"]);
-                exit;
-            }
+            // if(!$datosProducto["id"]) {
+            //     http_response_code(400);
+            //     echo json_encode(["mensaje"=>"El id no es correcto"]);
+            //     exit;
+            // }
+
+            validar_id($datosProducto["id"] ?? "");
 
             $consulta = "SELECT * FROM productos WHERE id=?";
             
@@ -245,19 +255,54 @@
                 echo json_encode(["mensaje"=>"El producto con este id no existe"]);
                 exit;
             }
-
+            
             $consulta = "DELETE FROM productos WHERE id=?";
-
+            
             $stmt = $pdo->prepare($consulta);
+            
+            try {
+                $stmt->execute([$datosProducto["id"]]);
+            }
+            catch (PDOException $e) {
+                http_response_code(400);
+                echo json_encode(["mensaje"=>"Error al ejecutar la consulta " . $e]);
+                exit;
+            }
+            
+            if($stmt->rowCount() == 0) {
+                http_response_code(400);
+                echo json_encode(["mensaje"=>"El producto con este id no existe"]);
+                exit;
+            }
+            else {           
+                echo json_encode(["mensaje"=>"Producto cont id " . $datosProducto["id"] . " eliminado corectamente"]);
+            }
 
-            $stmt->execute([$datosProducto["id"]]);
-
-            echo json_encode(["mensaje"=>"Producto cont id " . $datosProducto["id"] . " eliminado corectamente"]);
         }
 
         if($error) {
                 http_response_code(400);
                 echo json_encode($error);
                 exit;
+        }
+    }
+
+    function validar_id($id) {
+        if(!isset($id)) {
+            http_response_code(400);
+            echo json_encode(["mensaje"=>"Faltan datos de producto"]);
+            exit;
+        }
+
+        if(!$id) {
+            http_response_code(400);
+            echo json_encode(["mensaje"=>"El id no es correcto"]);
+            exit;
+        }
+        
+        if(!is_numeric($id) || $id < 0) {
+            http_response_code(400);
+            echo json_encode(["mensaje"=>"El id no es correcto"]);
+            exit;    
         }
     }
