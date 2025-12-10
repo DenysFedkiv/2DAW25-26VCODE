@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio: Variables CSS y JavaScript</title>
+    <style>
+        /* ====================================
+           AQUÍ ESCRIBIRÁS TUS VARIABLES CSS
+           ==================================== */
+        :root {
+            /* Define aquí tus variables */
+            --color-fondo: #fff;
+            --color-texto: #2c3e50;
+            --color-primario: #3498db;
+            --color-tarjeta: #f8f9fa;
+            --tamano-texto: 16px;
+        }
+
+        /* ====================================
+           ESTILOS BASE (no modificar)
+           ==================================== */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            min-height: 100vh;
+            padding: 20px;
+            transition: background-color 0.3s, color 0.3s;
+            /* USA TUS VARIABLES AQUÍ */
+            background-color: var(--color-fondo);
+            color: var(--color-texto);
+            font-size: var(--tamano-texto);
+        }
+
+        /* ====================================
+           AQUÍ ESCRIBIRÁS TUS ESTILOS
+           ==================================== */
+        .contenedor {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .titulo {
+            text-align: center;
+            margin-bottom: 30px;
+            /* USA TUS VARIABLES AQUÍ */
+            color: var(--color-primario);
+        }
+
+        .controles {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .boton {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s;
+            /* USA TUS VARIABLES AQUÍ */
+            background-color: var(--color-primario);
+            color: white;
+        }
+
+        .boton:hover {
+            transform: scale(1.05);
+        }
+
+        .tarjeta {
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            /* USA TUS VARIABLES AQUÍ */
+            background-color: var(--color-tarjeta);
+            color: var(--color-texto);
+        }
+
+        .tarjeta h2 {
+            margin-bottom: 10px;
+        }
+
+        .tarjeta p {
+            line-height: 1.6;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <h1 class="titulo">Variables CSS + JavaScript</h1>
+        
+        <div class="controles">
+            <button class="boton" id="btn-tema">🌙 Tema Oscuro</button>
+            <button class="boton" id="btn-tamano">Aa Aumentar Texto</button>
+            <button class="boton" id="btn-color">🎨 Cambiar Color</button>
+            <button class="boton" id="btn-reset">↺ Resetear</button>
+        </div>
+
+        <div class="tarjeta">
+            <h2>¿Qué son las variables CSS?</h2>
+            <p>
+                Las variables CSS permiten almacenar valores que se pueden 
+                reutilizar en toda la hoja de estilos. Se definen con doble 
+                guión (--nombre) y se usan con var(--nombre).
+            </p>
+        </div>
+
+        <div class="tarjeta">
+            <h2>¿Por qué usar JavaScript?</h2>
+            <p>
+                JavaScript puede modificar las variables CSS en tiempo real.
+                Esto permite crear temas dinámicos, ajustes de accesibilidad
+                y efectos interactivos sin recargar la página.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        /* ====================================
+           AQUÍ ESCRIBIRÁS TU JAVASCRIPT
+           ==================================== */
+
+        // Paso 1: Obtener referencias a los botones
+
+        let btnTema = document.getElementById("btn-tema");
+        let btn_tamano = document.getElementById("btn-tamano");
+        let btn_color = document.getElementById("btn-color");
+        let btn_reset = document.getElementById("btn-reset");
+
+        let temaOscuro = false;
+
+        document.documentElement.style.setProperty('--nombre-variable', 'nuevo-valor');
+        
+        // Paso 2: Crear las funciones para cada botón
+        
+        function cambiarTema() {
+            if(!temaOscuro) {
+                document.documentElement.style.setProperty('--color-fondo', '#1a1a2e');
+                document.documentElement.style.setProperty('--color-texto', '#eaeaea');
+                document.documentElement.style.setProperty('--color-tarjeta', '#16213e');
+                btnTema.innerText = "☀️ Tema Claro";
+                temaOscuro = true;
+            }
+            else {
+                document.documentElement.style.setProperty('--color-fondo', '#ffffff');
+                document.documentElement.style.setProperty('--color-texto', '#2c3e50');
+                document.documentElement.style.setProperty('--color-tarjeta', '#f8f9fa');
+                btnTema.innerText = "🌙 Tema Oscuro";
+                temaOscuro = false;
+            }
+        }
+        
+        let tamanoActual = 16;
+        
+        function cambiarTamano() {
+            if(tamanoActual != 24) {
+                tamanoActual += 2;
+            }
+            else {
+                tamanoActual = 16;
+            }
+            
+            document.documentElement.style.setProperty('--tamano-texto', tamanoActual + 'px');
+        }
+
+
+
+        // Paso 3: Conectar los botones con las funciones
+
+        btnTema.addEventListener('click', cambiarTema);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" id="nombre">
+        <input type="password" id="pass">
+        <button type="button" id="guardar">Guardar</button>
+        <button>Enviar</button>
+    </form>
+    <script>
+        let user = document.getElementById("nombre");
+        let pass = document.getElementById("pass");
+
+        if(localStorage.getItem("user") && localStorage.getItem("pass")) {
+            user.value = localStorage.getItem("user");
+            pass.value = localStorage.getItem("pass");
+            console.log("User: " + localStorage.getItem("user") + " | Password: " + localStorage.getItem("pass"));
+        }
+
+        function guardar() {
+            if(user.value != "" && pass.value != "") {
+                localStorage.setItem("user", user.value.trim());
+                localStorage.setItem("pass", pass.value.trim());
+            }
+        }
+
+        document.getElementById("guardar").addEventListener("click", guardar);
+    </script>
+</body>
+</html>
