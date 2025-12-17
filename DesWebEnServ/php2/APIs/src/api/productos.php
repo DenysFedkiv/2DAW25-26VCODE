@@ -2,7 +2,9 @@
     require_once("config.php");
     require_once("autorizar.php");
 
-    validarToken();
+    $datosUsuario = comprobarToken();
+
+    if($datosUsuario["rol"]) {}
     
     $metodo = $_SERVER['REQUEST_METHOD'];
     

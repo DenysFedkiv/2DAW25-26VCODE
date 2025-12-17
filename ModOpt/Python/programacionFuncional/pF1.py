@@ -1,3 +1,4 @@
+# Filtrar para mostrar numeros que son divisible de 11
 numeros = [12, 34, 56, 78, 89, 13, 129, 144, 55, 66, 700, 120]
 numerosMO = []
 
