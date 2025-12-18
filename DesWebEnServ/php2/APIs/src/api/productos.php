@@ -2,11 +2,14 @@
     require_once("config.php");
     require_once("autorizar.php");
 
-    $datosUsuario = comprobarToken();
-
-    if($datosUsuario["rol"]) {}
     
     $metodo = $_SERVER['REQUEST_METHOD'];
+    
+    if($metodo != "GET") {
+        $datosUsuario = comprobarToken();
+        $rol = $datosUsuario->rol;
+        $esAdmin = $rol === "admin";
+    }
     
     $id = $_GET["id"] ?? "";
 
