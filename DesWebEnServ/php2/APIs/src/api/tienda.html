@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda</title>
+</head>
+<body>
+    <h1 id="titulo">Listado de productos</h1>
+    
+    <script>
+        const lista = document.createElement("div"); 
+        document.body.append(lista);
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const titulo = document.getElementById("titulo");
+            titulo.innerHTML = "Estamos dentro";
+            const apiURL = "http://localhost:8080/productos.php"
+            fetch(apiURL)
+            .then(response=>{return response.json()})
+            .then(data=>{mostrarDatos(data);})
+            .catch(error=>{console.error("Error")})
+        });
+
+        function mostrarDatos(productos) {
+            console.log(1);
+            productos.forEach(producto => {
+                let div = document.createElement("div");
+                div.className = "producto";
+                div.innerHTML = `<p>Id: ${producto.id}</p><p>Nombre: ${producto.nombre}</p><p>Precio: ${producto.precio}</p><p>Stock: ${producto.stock}</p>`;
+                console.log(2);
+                lista.append(div);
+            });
+        }
+    </script>
+</body>
+</html>

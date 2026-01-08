@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(40, 40, 40, 0.6);
+        }
+
+        #modal {
+            width: 30%;
+            height: 30%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-content: center;
+            padding: 2%;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="principal">
+        <h1>Contenido principal</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat nemo, necessitatibus expedita tenetur maxime dicta accusamus ipsam! Doloribus dignissimos officia numquam est placeat, blanditiis exercitationem! Aperiam sequi natus deserunt quis?</p>
+        <p>Minus soluta cupiditate recusandae cumque minima, rerum quia enim quod dolores perferendis quam aliquam, repudiandae inventore nihil nulla itaque ab. Dicta, ea? Iste itaque, natus nihil omnis facere cumque ullam?</p>
+        <p>Voluptatem, mollitia ipsam quas molestiae quidem quod asperiores sint molestias. Esse dolores eum enim animi ex minus obcaecati. Recusandae ipsam consequatur odio eligendi voluptas accusantium magni harum ea laudantium corporis.</p>
+        <p>Nisi sunt deserunt cupiditate ducimus eveniet necessitatibus corrupti suscipit quisquam maxime iure, fugiat nesciunt corporis eos officiis at laboriosam, dignissimos tempore est! Dolorem animi itaque ratione perferendis modi molestias minus.</p>
+        <p>Sunt ratione cum animi iste ipsum voluptatibus voluptate expedita mollitia ab ad in libero dolor aliquam sint sed voluptates ex aliquid natus, ut dolore aspernatur! Officiis rem dolor necessitatibus a.</p>
+    </div>
+    <div id="overlay">
+        <div id="modal">
+            <h3>Para usar este sitio web se necesita el uso de cookies</h3>
+            <div>
+                <button id="btnSi">Confirmar</button>
+                <button id="brnNo">Rechazar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

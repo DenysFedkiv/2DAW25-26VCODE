@@ -1,0 +1,60 @@
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+}
+
+h1 {
+    color: brown;
+    padding: 20px;
+}
+
+h2, h3 {
+    color: #333333;
+    margin-top: 25px;
+}
+
+#contenido-principal {
+    border: 1px solid black;
+}
+
+.subtitulo {
+    color: gray;
+    font-style: italic;
+}
+
+a[target="_blank"] {
+    background-color: lightblue;
+}
+
+a[href$=".pdf"] {
+    color: red;
+    font-weight: bold;
+}
+
+a[href^="https"] {
+    color: green;
+}
+
+.recursos li {
+    margin-bottom: 10px;
+}
+
+article > p {
+    line-height: 1.5;
+}
+
+h2 + p {
+    text-decoration: underline;
+}
+
+article p {
+    color: blue !important;
+}
+
+.destacado {
+    color: orange;
+}
+
+#contenido-principal p.destacado {
+    color: purple;
+}

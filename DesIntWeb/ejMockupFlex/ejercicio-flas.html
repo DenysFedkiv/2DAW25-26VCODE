@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlexDash - Panel de Control</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="logo">
+            <div class="logo-icon">F</div>
+            <span class="logo-text">FlexDash</span>
+        </div>
+        
+        <nav class="nav-menu">
+            <a href="#" class="active">Inicio</a>
+            <a href="#">Proyectos</a>
+            <a href="#">Equipo</a>
+            <a href="#">Informes</a>
+        </nav>
+        
+        <div class="user-area">
+            <div class="notifications">🔔</div>
+            <div class="user-avatar">JT</div>
+        </div>
+    </header>
+
+    <!-- CONTENEDOR PRINCIPAL: sidebar + contenido -->
+    <div class="main-container">
+        
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <a href="#" class="sidebar-item active">
+                <span class="sidebar-icon">📊</span>
+                <span>Dashboard</span>
+            </a>
+            <a href="#" class="sidebar-item">
+                <span class="sidebar-icon">📁</span>
+                <span>Proyectos</span>
+            </a>
+            <a href="#" class="sidebar-item">
+                <span class="sidebar-icon">👥</span>
+                <span>Equipo</span>
+            </a>
+            <a href="#" class="sidebar-item">
+                <span class="sidebar-icon">⚙️</span>
+                <span>Ajustes</span>
+            </a>
+            
+            <div class="sidebar-spacer"></div>
+            
+            <div class="sidebar-footer">
+                FlexDash v1.0
+            </div>
+        </aside>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <main class="content">
+            
+            <!-- Cabecera del contenido -->
+            <div class="content-header">
+                <div class="content-title">
+                    <h1>Panel de Control</h1>
+                    <p>Bienvenido, aquí tienes el resumen</p>
+                </div>
+                <div class="header-actions">
+                    <button class="btn btn-secondary">Exportar</button>
+                    <button class="btn btn-primary">+ Nuevo</button>
+                </div>
+            </div>
+
+            <!-- TARJETAS DE ESTADÍSTICAS -->
+            <section class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">📦</div>
+                    <div class="stat-value">48</div>
+                    <div class="stat-label">Proyectos</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">👥</div>
+                    <div class="stat-value">12</div>
+                    <div class="stat-label">Miembros</div>
+                </div>
+                
+                <div class="stat-card destacada">
+                    <div class="stat-icon">💰</div>
+                    <div class="stat-value">€12,450</div>
+                    <div class="stat-label">Ingresos</div>
+                </div>
+                
+                <div class="stat-card" id="stat-card-4">
+                    <div class="stat-icon">✅</div>
+                    <div class="stat-value">89%</div>
+                    <div class="stat-label">Completado</div>
+                </div>
+            </section>
+
+            <!-- SECCIÓN INFERIOR -->
+            <section class="bottom-section">
+                
+                <!-- Panel de actividad -->
+                <div class="activity-panel">
+                    <h2 class="panel-title">Actividad Reciente</h2>
+                    
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-avatar">MA</div>
+                            <div class="activity-info">
+                                <div class="activity-text">María completó "Rediseño"</div>
+                                <div class="activity-time">Hace 5 min</div>
+                            </div>
+                            <div class="activity-status status-success"></div>
+                        </div>
+                        
+                        <div class="activity-item">
+                            <div class="activity-avatar">CP</div>
+                            <div class="activity-info">
+                                <div class="activity-text">Carlos añadió 3 tareas</div>
+                                <div class="activity-time">Hace 1 hora</div>
+                            </div>
+                            <div class="activity-status status-info"></div>
+                        </div>
+                        
+                        <div class="activity-item">
+                            <div class="activity-avatar">LG</div>
+                            <div class="activity-info">
+                                <div class="activity-text">Laura subió archivos</div>
+                                <div class="activity-time">Hace 2 horas</div>
+                            </div>
+                            <div class="activity-status status-warning"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Panel de accesos rápidos -->
+                <div class="quick-panel">
+                    <h2 class="panel-title">Accesos Rápidos</h2>
+                    
+                    <div class="quick-grid">
+                        <div class="quick-item">
+                            <span class="quick-icon">📄</span>
+                            <span class="quick-label">Nuevo doc</span>
+                        </div>
+                        <div class="quick-item">
+                            <span class="quick-icon">📅</span>
+                            <span class="quick-label">Calendario</span>
+                        </div>
+                        <div class="quick-item">
+                            <span class="quick-icon">💬</span>
+                            <span class="quick-label">Mensajes</span>
+                        </div>
+                        <div class="quick-item">
+                            <span class="quick-icon">📊</span>
+                            <span class="quick-label">Informes</span>
+                        </div>
+                    </div>
+                </div>
+                
+            </section>
+
+        </main>
+    </div>
+
+</body>
+</html>

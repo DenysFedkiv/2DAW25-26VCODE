@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio2</title>
+    <link rel="stylesheet" href="Ej2.css">
+</head>
+<body>
+    <div id="formulario-principal">
+    <h1 class="titulo-importante">Registro TechConf 2025</h1>
+    <form>
+        <fieldset class="datos-personales">
+            <legend>Información Personal</legend>
+            <input type="text" placeholder="Nombre" required>
+            <input type="email" placeholder="Email" class="campo-obligatorio" required>
+            <input type="tel" placeholder="Teléfono">
+        </fieldset>
+        
+        <fieldset id="preferencias">
+            <legend class="titulo-seccion">Preferencias del Evento</legend>
+            <div class="grupo-opciones">
+                <input type="checkbox" id="taller1" class="workshop">
+                <label for="taller1">Taller de IA</label>
+                <input type="checkbox" id="taller2" class="workshop premium">
+                <label for="taller2">Taller Avanzado</label>
+            </div>
+            <select class="campo-obligatorio">
+                <option>Selecciona horario</option>
+                <option>Mañana</option>
+                <option>Tarde</option>
+            </select>
+        </fieldset>
+        
+        <div class="botones-accion">
+            <button type="submit" id="btn-enviar" class="boton principal">Enviar</button>
+            <button type="reset" class="boton secundario">Limpiar</button>
+            <a href="#" class="boton enlace-cancelar">Cancelar</a>
+        </div>
+    </form>
+</div>
+<footer>
+    <p class="texto-legal campo-obligatorio">Al registrarte aceptas los términos</p>
+    <a href="politica.pdf" class="enlace-legal">Política de privacidad</a>
+</footer>
+</body>
+</html>

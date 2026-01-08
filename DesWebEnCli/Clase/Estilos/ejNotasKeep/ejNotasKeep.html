@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nnotas</title>
+    <link rel="stylesheet" href="CSS/ejNotasKeep.css">
+</head>
+<body>
+    <header>
+        <h1>Mis Notas</h1>
+        <div id="controlNotas">
+            <button id="crearNotaForm" onclick="crearNotaForm()">Añadir</button><button id="buscarNotaForm" onclick="buscarNotaForm()">Buscar</button><button id="statsNotaForm" onclick="statsNotaForm()">Estadisticas</button>
+        </div>
+        <div id="crearNota">
+            <form action="">
+                <input type="text" name="tituloNota" id="tituloNota" placeholder="Titulo">
+                <textarea name="textNota" id="textNota" placeholder="Texto de nota" rows="8"></textarea>
+                <select name="colorNota" id="colorNota">
+                    <option value="Color1"><p style="background-color: black;">Color 1</p></option>
+                    <option value="Color2">Color2</option>
+                    <option value="Color3">Color3</option>
+                    <option value="Color4">Color4</option>
+                    <option value="Color5">Color5</option>
+                    <option value="Color6">Color6</option>
+                </select>
+                <label for="proiridadNota" id="prioridadNotaLabel">Con prioridad</label>
+                <input type="checkbox" name="prioridadNota" id="prioridadNota">
+                <input type="color" name="colorTexto" id="colorTexto"><br>
+                <input type="button" value="Crear" onclick="crearNota()" id="crearNotaButton">
+            </form>
+        </div>
+        <div id="buscarNota">
+            <h2>Buscar notas</h2>
+            <form action="" id="formBuscar">
+                <label for="tituloNotaBuscar" id="tituloNotaBuscarLabel">Titulo</label>
+                <input type="text" name="tituloNotaBuscar" id="tituloNotaBuscar" placeholder="Titulo">
+                <select name="colorNotaBuscar" id="colorNotaBuscar">
+                    <option value="Color1"><p style="background-color: black;">Color 1</p></option>
+                    <option value="Color2">Color2</option>
+                    <option value="Color3">Color3</option>
+                    <option value="Color4">Color4</option>
+                    <option value="Color5">Color5</option>
+                    <option value="Color6">Color6</option>
+                </select>
+                <div id="prioridadNotaBuscarCont">
+                    <label for="prioridadNotaBuscar" id="prioridadNotaBuscarLabel">Con prioridad</label>
+                    <input type="checkbox" name="prioridadNotaBuscar" id="prioridadNotaBuscar">
+                </div>
+                <button type="button" onclick="buscarNota()">Buscar</button>
+            </form>
+            <div id="resultadoBuscar">
+
+            </div>
+        </div>
+        <div id="estadisticasNota">
+            <h2>Estadistica notas</h2>
+            <div id="estadisticasResultado">
+                
+            </div>
+        </div>
+    </header>
+    <div id="btBar">
+        <div id="l-btBar">
+            <button>B1</button>
+        </div>
+        <div id="r-btBar">
+            <button>B1</button>
+            <button>B2</button>
+            <button>B3</button>
+        </div>
+    </div>
+    <main>
+        <div id="lM">
+            <nav>
+                <h1>NAV</h1>
+            </nav>
+        </div>
+        <div id="rM">
+            <div id="destacado">
+                <div id="dest-titulo">
+                    <h2>Titulo</h2>
+                </div>
+                <div id="dest-notas">
+                    <div class="nota notaDest notaLineal" data-index="0">
+                        <div class="modNota"><img src="IMG/editar.svg"></div>
+                        <h2>Nota 1</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe officia, sunt reprehenderit qui quisquam porro inventore dicta? Est itaque nobis molestias consectetur sit laudantium omnis, ea inventore expedita, praesentium consequatur.</p>
+                    </div>
+                    <div class="nota notaDest notaLineal" data-index="1">
+                        <div class="modNota"><img src="IMG/editar.svg"></div>
+                        <h2>Nota 2</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe officia, sunt reprehenderit qui quisquam porro inventore dicta? Est itaque nobis molestias consectetur sit laudantium omnis, ea inventore expedita, praesentium consequatur.</p>
+                    </div>
+                    <div class="nota notaDest notaImagen" data-index="2">
+                        <div class="modNota"><img src="IMG/editar.svg"></div>
+                        <h2>Nota 3</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe officia, sunt reprehenderit qui quisquam porro inventore dicta? Est itaque nobis molestias consectetur sit laudantium omnis, ea inventore expedita, praesentium consequatur.</p>
+                    </div>
+                </div>
+            </div>
+            <div id="separador">
+                
+            </div>
+            <div id="notasCont">
+                <div class="nota notaImagen" data-index="3">
+                    <div class="modNota"><img src="IMG/editar.svg"></div>
+                    <h2>Nota 4</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe officia, sunt reprehenderit qui quisquam porro inventore dicta? Est itaque nobis molestias consectetur sit laudantium omnis, ea inventore expedita, praesentium consequatur.</p>
+                </div>
+                <div class="nota notaRadial" data-index="4">
+                    <div class="modNota"><img src="IMG/editar.svg"></div>
+                    <h2>Nota 5</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe officia, sunt reprehenderit qui quisquam porro inventore dicta? Est itaque nobis molestias consectetur sit laudantium omnis, ea inventore expedita, praesentium consequatur.</p>
+                </div>
+                <div class="nota notaConic" data-index="5">
+                    <div class="modNota"><img src="IMG/editar.svg"></div>
+                    <h2>Nota 6</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe officia, sunt reprehenderit qui quisquam porro inventore dicta? Est itaque nobis molestias consectetur sit laudantium omnis, ea inventore expedita, praesentium consequatur.</p>
+                </div>
+            </div>
+        </div>
+        <div id="redSoc">
+            <a href=""><img src="IMG/twitter-x.svg" alt=""></a>
+            <a href=""><img src="IMG/instagram.svg" alt=""></a>
+            <a href=""><img src="IMG/snapchat.svg" alt=""></a>
+            <a href=""><img src="IMG/facebook.svg" alt=""></a>
+        </div>
+        <div id="chatBot">
+            
+        </div>
+    </main>
+    <footer>
+        <p>Autor Autoro</p>
+    </footer>
+
+    <script src="JS/script.js"></script>
+</body>
+</html>

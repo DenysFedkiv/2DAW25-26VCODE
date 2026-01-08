@@ -1,0 +1,315 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos base para MÓVIL */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #333;
+    padding: 15px;
+}
+
+.contenedor {
+    max-width: 100%;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 16px;
+    margin-top: 15px;
+    margin-bottom: 8px;
+}
+
+p {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.subtitulo {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.nota {
+    font-size: 12px;
+    color: #999;
+    margin-top: 30px;
+}
+
+/* TABLET - Pantallas de 768px o más */
+@media (min-width: 768px) {
+    body {
+        font-size: 18px;
+        line-height: 1.8;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 30px;
+        margin-bottom: 14px;
+    }
+
+    h2 {
+        font-size: 24px;
+        margin-top: 24px;
+        margin-bottom: 12px;
+    }
+
+    h3 {
+        font-size: 20px;
+        margin-top: 18px;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 17px;
+        margin-bottom: 16px;
+    }
+
+    .subtitulo {
+        font-size: 20px;
+        margin-bottom: 24px;
+    }
+
+    .nota {
+        font-size: 14px;
+        margin-top: 36px;
+    }
+}
+
+/* DESKTOP - Pantallas de 1024px o más */
+@media (min-width: 1024px) {
+    body {
+        font-size: 20px;
+        line-height: 2;
+        padding: 18px;
+    }
+
+    .contenedor {
+        max-width: ;
+        margin: ;
+    }
+
+    h1 {
+        font-size: 35px;
+        margin-bottom: 18px;
+    }
+
+    h2 {
+        font-size: 28px;
+        margin-top: 24px;
+        margin-bottom: 14px;
+    }
+
+    h3 {
+        font-size: 22px;
+        margin-top: 20px;
+        margin-bottom: 12px;
+    }
+
+    p {
+        font-size: 20px;
+        margin-bottom: 18px;
+    }
+
+    .subtitulo {
+        font-size: 24px;
+        margin-bottom: 26px;
+    }
+
+    .nota {
+        font-size: 18px;
+        margin-top: 40px;
+    }
+}
+
+
+/* Estilos base para MÓVIL */
+html {
+    font-size: 12px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.4;
+    color: #333;
+    padding: 1.2rem;
+}
+
+.contenedor {
+    max-width: 100%;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-top: 1.8rem;
+    margin-bottom: 0.9rem;
+}
+
+h3 {
+    font-size: 1.4rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.8rem;
+}
+
+p {
+    font-size: 1.1rem;
+    margin-bottom: 1.3rem;
+}
+
+.subtitulo {
+    font-size: 1.3rem;
+    color: #666;
+    margin-bottom: 1.7rem;
+}
+
+.nota {
+    font-size: 1rem;
+    color: #999;
+    margin-top: 2.6rem;
+}
+
+/* TABLET - Pantallas de 768px o más */
+@media (min-width: 768px) {
+    body {
+        font-size: 1.4rem;
+        line-height: 1.8;
+        padding: 1.3rem;
+    }
+
+    h1 {
+        font-size: 2.6rem;
+        margin-bottom: 1.2rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    h3 {
+        font-size: 1.7rem;
+        margin-top: 1.7rem;
+        margin-bottom: 1rem;
+    }
+
+    p {
+        font-size: 1.4rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .subtitulo {
+        font-size: 1.6rem;
+        margin-bottom: 2rem;
+    }
+
+    .nota {
+        font-size: 1.2rem;
+        margin-top: 3rem;
+    }
+}
+
+/* DESKTOP - Pantallas de 1024px o más */
+@media (min-width: 1024px) {
+    body {
+        font-size: 1.6rem;
+        line-height: 2;
+        padding: 1.5rem;
+    }
+
+    h1 {
+        font-size: 3rem;
+        margin-bottom: 1.6rem;
+    }
+
+    h2 {
+        font-size: 2.4rem;
+        margin-top: 2.4rem;
+        margin-bottom: 1.1rem;
+    }
+
+    h3 {
+        font-size: 2rem;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    p {
+        font-size: 1.7rem;
+        margin-bottom: 1.6rem;
+    }
+
+    .subtitulo {
+        font-size: 2rem;
+        margin-bottom: 2.3rem;
+    }
+
+    .nota {
+        font-size: 1.6rem;
+        margin-top: 3.6rem;
+    }
+}
+
+
+h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: clamp(1rem, 1vw, 1.6rem);
+}
+
+h2 {
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    margin-top: clamp(1.8rem, 3vw, 2.4rem);
+    margin-bottom: clamp(0.9rem, 1vw, 1.1rem);
+}
+
+h3 {
+    font-size: clamp(1.4rem, 2vw, 2rem);
+    margin-top: clamp(1.5rem, 2vw, 2rem);
+    margin-bottom: clamp(0.8rem, 1vw, 1rem);
+}
+
+p {
+    font-size: clamp(1.1rem, 2vw, 1.7rem);
+    margin-bottom: clamp(1.3rem, 2vw, 1.6rem);
+}
+
+/* ALTERNATIVA: Usando calc() con vw */
+.subtitulo {
+    font-size: calc(1vw + 1rem);
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.nota {
+    font-size: calc(0.8vw + 0.7rem);
+    color: #999;
+    margin-top: 2rem;
+}
+
+.contenedor {
+    max-width: 65ch;
+}
+

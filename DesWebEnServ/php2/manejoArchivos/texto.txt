@@ -1,0 +1,22 @@
+<style>
+                table {
+                    border-collapse: collapse;
+                    text-align: center;
+                    }
+                    table td, tr {
+                        border: 1px solid black;
+                        padding: 8px;
+                }
+            </style>
+<table style='border: 1px solid black;'>
+<tr><td>6 X 0</td><td>0</td></tr>
+<tr><td>6 X 1</td><td>6</td></tr>
+<tr><td>6 X 2</td><td>12</td></tr>
+<tr><td>6 X 3</td><td>18</td></tr>
+<tr><td>6 X 4</td><td>24</td></tr>
+<tr><td>6 X 5</td><td>30</td></tr>
+<tr><td>6 X 6</td><td>36</td></tr>
+<tr><td>6 X 7</td><td>42</td></tr>
+<tr><td>6 X 8</td><td>48</td></tr>
+<tr><td>6 X 9</td><td>54</td></tr>
+</table>

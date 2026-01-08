@@ -1,0 +1,4 @@
+1. Ve descomentando en orden el css
+2. Modificar contenedor el tamaño y ver que se descoloca la web
+3. Cambiar contenedor a porcentaje
+4. Cambiar aside a 25% y artículos al 75% ver como si modificamos contenedor la pagina se sigue viendo bien.

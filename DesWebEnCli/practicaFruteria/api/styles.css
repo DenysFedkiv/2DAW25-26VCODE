@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-btn-cont {
+    width: 15%;
+}
+
+.nav-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: greenyellow;
+}
+
+main {
+    background-color: lightgrey;
+    padding: 2%;
+}
+
+#tienda-display {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 10%;
+    row-gap: 4%;
+}
+
+.producto {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2%;
+}
+
+.producto-img {
+    width: 80%;
+}
+
+.producto-precio {
+    color: lime;
+}
+
+.producto-addBtn {
+    padding: 2%;
+    background-color: greenyellow;
+    color: white;
+}
+
+.producto-restBtn {
+    padding: 2%;
+    background-color: red;
+    color: white;
+}
+
+#carito {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 20%;
+    height: 100vh;
+    box-shadow: 0 0 3px black;
+}
+
+#carito-title {
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2%;
+    border-bottom: 2px solid rgba(220, 220, 220, 0.5);
+}
+
+#carito-productos {
+    height: 80%;
+    padding: 0 4%;
+}
+
+.carito-productos-prod {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 4% 0;
+    border-bottom: 2px solid rgba(220, 220, 220, 0.5);
+}
+
+.carito-productos-prod-lSide {
+    width: 80%;
+    display: flex;
+    align-items: center;
+}
+
+.carito-productos-prod-rSide {
+    width: 20%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.carito-productos-prod-img {
+    width: 30%;
+}
+
+#carito-checkout {
+    height: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-top: 2px solid rgba(220, 220, 220, 0.5);
+    padding: 2%;
+}
+
+#carito-checkout-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

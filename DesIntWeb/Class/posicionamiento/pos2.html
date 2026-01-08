@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .cont {
+            transform: rotateY(60deg);
+            transform-style: preserve-3d;
+        }
+
+        .caja {
+            width: 200px;
+            height: 200px;
+        }
+
+        .caja1 {
+            background-color: aqua;
+            transform: rotateY(0deg);
+            position: absolute;
+            top: 200px;
+            left: 200px;
+        }
+        
+        .caja2 {
+            background-color: bisque;
+            transform: rotateY(60deg);
+            position: absolute;
+            top: 200px;
+            left: 200px;
+        }
+        
+        .caja3 {
+            background-color: chartreuse;
+            transform: rotateY(120deg);
+            position: absolute;
+            top: 200px;
+            left: 200px;
+        }
+
+        .caja4 {
+            background-color: tomato;
+        }
+    </style>
+</head>
+<body>
+    <div class="cont">
+        <div class="caja caja1"></div>
+        <div class="caja caja2"></div>
+        <div class="caja caja3"></div>
+        <div class="caja caja4"></div>
+    </div>
+</body>
+</html>

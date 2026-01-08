@@ -1,0 +1,12 @@
+RewriteEngine On
+
+# No reescribir si es un archivo real
+RewriteCond %{REQUEST_FILENAME} !-f
+# No reescribir si es un directorio real
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# /productos → productos.php
+RewriteRule ^productos/?$ productos.php [L]
+
+# /productos/123 → productos.php?id=123
+RewriteRule ^productos/([0-9]+)/?$ productos.php?id=$1 [L]

@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: greenyellow;
+    text-align: center;
+    padding: 3%;
+}
+
+main {
+    width: 100%;
+    margin-top: 2%;
+}
+
+main figure {
+    width: 100%;
+    padding: 4%;
+    margin-bottom: 2%;
+    text-align: center;
+    border-radius: 10px;
+    background-color: lightgreen;
+    box-shadow: 2px 2px 2px black;
+    transition: 0.25s;
+}
+
+main figure:hover {
+    box-shadow: 4px 4px 3px black;
+    transform: translateY(-1%);
+}
+
+main figure img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    transition: 0.25s;
+}
+
+main figure img:hover {
+    transform: scale(1.05);
+}
+
+main figure figcaption {
+    font-size: large;
+    margin-top: 1.5%;
+}
+
+footer {
+    clear: both;
+    text-align: center;
+    background-color: dimgray;
+    color: white;
+    padding: 4%;
+}
+
+
+
+@media (min-width: 768px) {
+    main figure {
+        width: 48%;
+        padding: 1.5%;
+        margin: 0 1%;
+        margin-bottom: 2%;
+        float: left;
+    }
+    main figure img:hover {
+        transform: scale(1.03);
+    }
+}
+
+@media (min-width: 1024px) {
+    main {
+        margin: 0;
+        margin-top: 1%;
+    }
+    
+    main figure {
+        width: 31.33%;
+        padding: 1%;
+        margin: 0 1%;
+        margin-bottom: 2%;
+        float: left;
+    }
+
+    main figure img:hover {
+        transform: scale(1.03);
+    }
+}
