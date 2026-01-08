@@ -219,4 +219,130 @@ footer {
     display: flex;
     justify-content: space-around;
     align-items: center;
+<<<<<<< HEAD
+=======
+}
+
+@media (max-width: 768px) {
+    body {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 3fr 3fr;
+        height: auto;
+    }
+
+    header {
+        grid-column: 1 / 2;
+    }
+    
+    #headBottom {
+        flex-direction: column;
+    }
+    
+    #headBott-title {
+        width: 100%;
+        text-align: center;
+        margin-top: 1%;
+    }
+    
+    #headBott-links {
+        width: 100%;
+        display: flex;
+    }
+    
+    #headBott-links-list {
+        margin: 2%;
+    }
+
+    #mainHero {
+        grid-column: 1 / 2;
+        justify-content: center;
+    }
+
+    #mainHero h2 {
+        margin: 0;
+    }
+
+    main {
+        grid-template-columns: 1fr 1fr;
+        padding: 2%;
+    }
+
+    #mainHeader {
+        grid-column: 1 / 3;
+    }
+
+    #mainLside {
+        grid-column: 1 / 2;
+    }
+
+    #mainRside {
+        grid-column: 2 / 3;
+    }
+
+    #mainFooter{
+        grid-column: 1 / 3;
+    }
+
+    aside {
+        display: flex;
+        flex-direction: column;
+        gap: 5%;
+        padding: 2%;
+    }
+
+    #aside-search {
+        width: 100%;
+        height: auto;
+        align-items: center;
+    }
+
+    #aside-cats {
+        width: 100%;
+        height: auto;
+        align-items: center;
+    }
+
+    #aside-cats-list {
+        list-style: none;
+        text-align: center;
+    }
+
+    #aside-ad {
+        width: 100%;
+    }
+
+    #aside-ad-img {
+        margin: auto;
+    }
+
+    footer {
+        grid-column: 1 / 2;
+    }
+}
+
+@media (max-width: 480px) {
+    #headTop {
+        flex-direction: column;
+    }
+
+    main {
+        grid-template-rows: 1fr 3fr 1fr 1fr;
+    }
+
+    #mainLside {
+        grid-column: 1 / 3;
+    }
+
+    #mainLside-img {
+        width: 100%;
+    }
+
+    #mainRside {
+        grid-column: 1 / 3;
+    }
+
+    #aside-ad-img {
+        width: 100%;
+    }
+>>>>>>> 843572b (ej2grid | practicaFruteria)
 }
