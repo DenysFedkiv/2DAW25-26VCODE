@@ -1,0 +1,12 @@
+$large: 50px;
+$gray: gray;
+$color: green;
+
+h1 {
+    color: $color;
+}
+
+p {
+    background-color: $gray;
+    font-size: $large;
+}

@@ -72,16 +72,16 @@ function defaultContador() {
     let btns = document.querySelectorAll(".producto-caritoBtn");
 
     for(let btn of btns) {
-        btn.disabled = true;
+        btn.style.display = "none";
     }
 }
 
 function checkContador(e) {
     if(parseInt(e.currentTarget.parentElement.querySelector(".producto-contador").innerText) == 0) {
-        e.currentTarget.parentElement.parentElement.querySelector(".producto-caritoBtn").disabled = true;
+        e.currentTarget.parentElement.parentElement.querySelector(".producto-caritoBtn").style.display = "none";
     }
     else {
-        e.currentTarget.parentElement.parentElement.querySelector(".producto-caritoBtn").disabled = false;
+        e.currentTarget.parentElement.parentElement.querySelector(".producto-caritoBtn").style.display = "block";
     }
 }
 
