@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Fruteria</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -14,21 +14,21 @@
         </div>
         <nav>
             <div class="nav-btn-cont">
-                <button class="nav-btn">Tienda</button>
+                <button id="btn-tienda" class="nav-btn">Tienda</button>
             </div>
             <div class="nav-btn-cont">
-                <button class="nav-btn">Administracion</button>
+                <button id="btn-admin" class="nav-btn">Administracion</button>
             </div>
             <div class="nav-btn-cont">
-                <button class="nav-btn">Manager</button>
+                <button id="btn-manager" class="nav-btn">Manager</button>
             </div>
         </nav>
     </header>
     <main>
         <div id="tienda">
             <div id="tienda-cats">
-                <button>Frutas</button>
-                <button>Verduras</button>
+                <button id="tienda-cats-fruta">Frutas</button>
+                <button id="tienda-cats-verdura">Verduras</button>
             </div>
             <div id="tienda-display">
                 
@@ -53,7 +53,35 @@
             </div>
         </div>
         <div id="administracion">
-            
+            <div id="admin-productos">
+                <div id="admin-productos-cats">
+                    <button id="admin-cats-fruta">Frutas</button>
+                    <button id="admin-cats-verdura">Verduras</button>
+                </div>
+                <div id="admin-productos-display">
+                    
+                </div>
+            </div>
+            <div id="admin-form-cont">
+                <form action="" id="admin-form">
+                    <h3>Cambiar porducto</h3>
+                    <label for="admin-form-nombre">Nombre</label>
+                    <input type="text" id="admin-form-nombre">
+                    <label for="admin-form-precio">Precio</label>
+                    <input type="text" id="admin-form-precio">
+                    <label for="admin-form-url">URL</label>
+                    <input type="text" id="admin-form-url">
+                    <label for="admin-form-categoria">Categoria</label>
+                    <select id="admin-form-categoria">
+                        <option value="fruta">Fruta</option>
+                        <option value="verdura">Verdura</option>
+                    </select>
+                    <div id="admin-form-btn-cont">
+                        <button type="button" id="admin-form-saveBtn">Guardar cambios</button>
+                        <button type="button" id="admin-form-deleteBtn">Eliminar producto</button>
+                    </div>
+                </form>
+            </div>
         </div>
         <div id="manager">
             

@@ -4,6 +4,13 @@
     $metodo = $_SERVER['REQUEST_METHOD'];
     
     $id = $_GET["id"] ?? "";
+    $buscar = $_GET["buscar"] ?? "";
+    $estado = $_GET["estado"] ?? "";
+    $prioridad = $_GET["prioridad"] ?? "";
+    $orden = $_GET["orden"] ?? "";
+    $direccion = $_GET["direccion"] ?? "";
+    $pagina = $_GET["pagina"] ?? "";
+    $limite = $_GET["limite"] ?? "";
 
     $pdo = conectar_bd();
 
@@ -11,6 +18,9 @@
         case "GET":
             if($id) {
                 listarTarea($id, $pdo);    
+            }
+            else if($_GET) {
+                listarTareasBuscar($buscar, $estado, $prioridad, $orden, $direccion, $pagina, $limite, $pdo);
             }
             else {
                 listarTareas($pdo);
@@ -73,6 +83,150 @@
         exit;
     }
 
+    function listarTareasBuscar($buscar, $estado, $prioridad, $orden, $direccion, $pagina, $limite, $pdo) {
+        $where = [];
+        $order_sql = "";
+        $parametros = [];
+
+        if($buscar) {
+            $where[] = "(titulo LIKE :buscar OR descripcion LIKE :buscar)";
+            $parametros["buscar"] = "%" . $buscar . "%";
+        }
+        if($estado || $estado == 0) {
+            if(in_array($estado, ["0", "1", "true", "false"])) {
+                $where[] = "(completada = :estado)";
+                if($estado == "true") {
+                    $parametros["estado"] = true;
+                }
+                else if($estado == "false") {
+                    $parametros["estado"] = false;    
+                }
+                else {
+                    $parametros["estado"] = $estado;
+                }
+            }
+            else {
+                http_response_code(404);
+                echo json_encode(["mensaje"=>"Estado incorecto"]);
+                exit;
+            }
+        }
+
+        if($prioridad) {
+            if(in_array($prioridad, ["alta", "media", "baja"])) {
+                $where[] = "(prioridad = :prioridad)";
+                $parametros["prioridad"] = $prioridad;
+            }
+            else {
+                http_response_code(404);
+                echo json_encode(["mensaje"=>"Prioridad incorecta"]);
+                exit;
+            }
+        }
+
+        if($orden) {
+            if(in_array($orden, ["id", "titulo", "fecha_creacion", "prioridad"])) {
+                if($orden === "prioridad") {
+                    $order_sql = "FIELD(prioridad, 'alta', 'media', 'baja')";
+                }
+                else {
+                    $order_sql = $orden;
+                }
+            }
+            else {
+                http_response_code(404);
+                echo json_encode(["mensaje"=>"Orden incorecto"]);
+                exit;
+            }
+        }
+        else {
+            $order_sql = "id";
+        }
+
+        if($direccion) {
+            $direccion = strtoupper($direccion);
+            if(!in_array($direccion, ["ASC", "DESC"])) {
+                http_response_code(404);
+                echo json_encode(["mensaje"=>"Direccion incorecta"]);
+                exit;
+            }
+            else {
+                $order_sql .= " " . $direccion;
+            }
+        }
+        else {
+            $order_sql .= " ASC";
+        }
+
+        if($pagina) {
+            if(is_numeric($pagina)) {
+                $pagina = (int)$pagina;
+            }
+            else {
+                http_response_code(404);
+                echo json_encode(["mensaje"=>"Pagina incorecta"]);
+                exit;
+            }
+        }
+        else {
+            $pagina = 1;
+        }
+
+        if($limite) {
+            if(is_numeric($limite)) {
+                $limite = (int)$limite;
+            }
+            else {
+                http_response_code(404);
+                echo json_encode(["mensaje"=>"Pagina incorecta"]);
+                exit;
+            }
+        }
+        else {
+            $limite = 10;
+        }
+        
+        $offset = ($pagina - 1) * $limite;
+
+        if($where) {
+            $where_sql = "WHERE " . implode(" AND ", $where);
+        }
+        else {
+            $where_sql = "";
+        }
+                
+        $order_sql .= " " . $direccion;
+        
+        $consulta = "SELECT * FROM tareas $where_sql ORDER BY $order_sql LIMIT :limit OFFSET :offset";
+        
+        $stmt = $pdo->prepare($consulta);
+
+        foreach($parametros as $key => $value) {
+            if($key == "estado") {
+                $stmt->bindValue(":$key", $value, PDO::PARAM_BOOL);
+            }
+            else {
+                $stmt->bindValue(":$key", $value);
+            }
+        }
+
+        $stmt->bindValue(":limit", $limite, PDO::PARAM_INT);
+        $stmt->bindValue(":offset", $offset, PDO::PARAM_INT);
+
+        $stmt->execute();
+        
+        if($stmt->rowCount() == 0) {
+            http_response_code(404);
+            echo json_encode(["mensaje"=>"No existen tareas que coresponden a la busqueda"]);
+            exit;
+        }
+            
+        $tareas = $stmt->fetchAll();
+        http_response_code(200);
+        echo json_encode(["tareas"=>$tareas, "sql"=>$consulta]);
+        exit;
+    }
+                
     function validar_id($id) {
         if(!isset($id)) {
             http_response_code(400);

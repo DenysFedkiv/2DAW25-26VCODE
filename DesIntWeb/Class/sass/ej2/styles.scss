@@ -1,0 +1,43 @@
+@use "sass:list";
+@use "sass:map";
+$color-principal: #26f;
+$color-secundario: #666;
+$fuente-base: "'Helvetica', sans-serif";
+$espacio: 15px;
+$tamanios-header : (32px, 24px, 18px);
+$config-btn: ("fondo": #e74c3c, "texto": #ffffff, "radio-borde": 5px, "peso-fuente": bold);
+
+body {
+    font-family: $fuente-base;
+}
+
+h1 {
+    color: $color-principal;
+    font-size: list.nth($tamanios-header, 1);
+}
+
+button {
+    background-color: $color-principal;
+    color: white;
+    padding: $espacio;
+}
+
+footer {
+    background-color: $color-secundario;
+    padding: $espacio * 2;
+}
+
+h2 {
+    font-size: list.nth($tamanios-header, 2);
+}
+
+h3 {
+    font-size: list.nth($tamanios-header, 3);
+}
+
+.btn-alert {
+    background-color: map.get($config-btn, "fondo");
+    color: map.get($config-btn, "texto");
+    border-radius: map.get($config-btn, "radio-borde");
+    font-weight: map.get($config-btn, "peso-fuente");
+}

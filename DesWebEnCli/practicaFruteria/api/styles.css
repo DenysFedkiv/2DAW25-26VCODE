@@ -132,3 +132,50 @@ main {
     justify-content: space-between;
     align-items: center;
 }
+
+#administracion {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-auto-rows: 500px;
+}
+
+#admin-productos {
+    background-color: gray;
+}
+
+#admin-form-cont {
+    background-color: dimgray;
+}
+
+#admin-form {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 5%;
+}
+
+#admin-form input, #admin-form select, #admin-form-btn-cont {
+    height: 7%;
+}
+
+#admin-productos {
+}
+
+#admin-productos-display {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 10%;
+    row-gap: 4%;
+}
+
+#admin-form-btn-cont {
+    display: flex;
+    justify-content: space-around;
+}
+
+#admin-form button {
+    height: 100%;
+    width: 40%;
+}

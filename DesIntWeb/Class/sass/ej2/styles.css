@@ -1,0 +1,36 @@
+body {
+  font-family: "'Helvetica', sans-serif";
+}
+
+h1 {
+  color: #26f;
+  font-size: 32px;
+}
+
+button {
+  background-color: #26f;
+  color: white;
+  padding: 15px;
+}
+
+footer {
+  background-color: #666;
+  padding: 30px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+.btn-alert {
+  background-color: #e74c3c;
+  color: #ffffff;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,29 @@
+@use "sass:map";
+$colores: ("primario": #ccc, "secundario": #aaa);
+
+$tipo: "usuario";
+$img: ".gato.jpg";
+
+@if $tipo == "usuario" {
+    .btn-#{$tipo} {
+        background-color: green;
+    }
+}
+@if $tipo == "admin" {
+    .btn-#{$tipo} {
+        background-color: red;
+    }
+}
+
+.h1-#{$tipo} {
+    background-color: yellow;
+}
+
+body {
+    background-image: url(#{$img});
+}
+
+h1 {
+    background-color: map.get($colores, "secundario");
+}
+

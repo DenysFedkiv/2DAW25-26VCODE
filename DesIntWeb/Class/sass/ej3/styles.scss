@@ -1,0 +1,20 @@
+$nombre-icono: "user";
+$img: "url('img/icon-user.png')";
+$tema-actual: "dark";
+$imagen-fondo: "'assets/themes/dark/bg-pattern.jpg'";
+$lado: "left";
+$medida: 20px;
+
+.icon-#{$nombre-icono} {
+    background-image: #{$img};
+}
+
+body {
+    background-image: url(#{$imagen-fondo});
+}
+
+/*! Estilos aplicados para el lado: #{$lado} */
+.bloque-lateral {
+    border-#{$lado}-width: $medida;
+    margin-#{$lado}: $medida * 2;
+}

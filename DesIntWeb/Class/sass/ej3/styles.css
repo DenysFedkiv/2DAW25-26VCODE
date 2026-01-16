@@ -1,0 +1,15 @@
+.icon-user {
+  background-image: url('img/icon-user.png');
+}
+
+body {
+  background-image: url('assets/themes/dark/bg-pattern.jpg');
+}
+
+/*! Estilos aplicados para el lado: left */
+.bloque-lateral {
+  border-left-width: 20px;
+  margin-left: 40px;
+}
+
+/*# sourceMappingURL=styles.css.map */
