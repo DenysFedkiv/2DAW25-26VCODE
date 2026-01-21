@@ -179,3 +179,7 @@ main {
     height: 100%;
     width: 40%;
 }
+
+.manager-stats-productos-lista-prod-img {
+    width: 100px;
+}

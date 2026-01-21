@@ -1,0 +1,5 @@
+@import "header";
+
+.boton1 {
+    @extend %common-button;
+}

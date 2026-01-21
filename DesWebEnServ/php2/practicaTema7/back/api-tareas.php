@@ -196,6 +196,23 @@
         }
                 
         $order_sql .= " " . $direccion;
+
+        $consulta = "SELECT * FROM tareas $where_sql ORDER BY $order_sql";
+        
+        $stmt = $pdo->prepare($consulta);
+
+        foreach($parametros as $key => $value) {
+            if($key == "estado") {
+                $stmt->bindValue(":$key", $value, PDO::PARAM_BOOL);
+            }
+            else {
+                $stmt->bindValue(":$key", $value);
+            }
+        }
+        
+        $stmt->execute();
+
+        $total = $stmt->rowCount();
         
         $consulta = "SELECT * FROM tareas $where_sql ORDER BY $order_sql LIMIT :limit OFFSET :offset";
         
@@ -223,7 +240,12 @@
             
         $tareas = $stmt->fetchAll();
         http_response_code(200);
-        echo json_encode(["tareas"=>$tareas, "sql"=>$consulta]);
+        echo json_encode(["exito"=>true, "tareas"=>$tareas, "paginacion"=>["pagina_actual"=>$pagina,
+        "por_pagina"=>$limite,
+        "total_registros"=>(int)$total,
+        "total_paginas"=>(int)ceil($total / $limite),
+        "tiene_anterior"=>$pagina > 1,
+        "tiene_siguiente"=>$pagina < ceil($total / $limite)]]);
         exit;
     }
                 

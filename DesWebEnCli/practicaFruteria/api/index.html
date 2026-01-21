@@ -48,6 +48,7 @@
                     </div>
                     <div>
                         <button id="carito-checkout-btn">Comprar</button>
+                        <button id="carito-clear-btn">Limpiar carito</button>
                     </div>
                 </div>
             </div>
@@ -57,6 +58,7 @@
                 <div id="admin-productos-cats">
                     <button id="admin-cats-fruta">Frutas</button>
                     <button id="admin-cats-verdura">Verduras</button>
+                    <button id="admin-cats-add">Añadir producto</button>
                 </div>
                 <div id="admin-productos-display">
                     
@@ -66,25 +68,50 @@
                 <form action="" id="admin-form">
                     <h3>Cambiar porducto</h3>
                     <label for="admin-form-nombre">Nombre</label>
-                    <input type="text" id="admin-form-nombre">
+                    <input type="text" id="admin-form-nombre" value="" autocomplete="off" required>
                     <label for="admin-form-precio">Precio</label>
-                    <input type="text" id="admin-form-precio">
+                    <input type="number" id="admin-form-precio" value="0" min="0" step="0.01" autocomplete="off" required>
                     <label for="admin-form-url">URL</label>
-                    <input type="text" id="admin-form-url">
+                    <input type="text" id="admin-form-url" value="" autocomplete="off" required>
                     <label for="admin-form-categoria">Categoria</label>
-                    <select id="admin-form-categoria">
+                    <select id="admin-form-categoria" autocomplete="off">
                         <option value="fruta">Fruta</option>
                         <option value="verdura">Verdura</option>
                     </select>
                     <div id="admin-form-btn-cont">
                         <button type="button" id="admin-form-saveBtn">Guardar cambios</button>
                         <button type="button" id="admin-form-deleteBtn">Eliminar producto</button>
+                        <button type="button" id="admin-form-addBtn">Añadir producto</button>
                     </div>
                 </form>
             </div>
         </div>
         <div id="manager">
-            
+            <div id="manager-stats-generales">
+                <div id="manager-stats-generales-ventasTotal">
+                    <p>Recuadacion Total</p>
+                    <p id="manager-stats-generales-ventasTotal-value">0</p>
+                </div>
+                <div id="manager-stats-generales-ticketsTotal">
+                    <p>Total Ventas</p>
+                    <p id="manager-stats-generales-ticketsTotal-value">0</p>
+                </div>
+                <div id="manager-stats-generales-prodFav">
+                    <p>Producto Estrella</p>
+                    <p id="manager-stats-generales-prodFav-value">Producto</p>
+                </div>
+            </div>
+            <div id="manager-stats-productos">
+                <div id="manager-stats-productos-cabeza">
+                    <p id="manager-stats-productos-cabeza-prod">Producto</p>
+                    <p id="manager-stats-productos-cabeza-udVendidas">Unidades Vendidas</p>
+                    <p id="manager-stats-productos-cabeza-ingresosTotal">Ingresos Generados</p>
+                    <p id="manager-stats-productos-cabeza-tickets">Frecuencia de Venta</p>
+                </div>
+                <div id="manager-stats-productos-lista">
+                    
+                </div>
+            </div>
         </div>
     </main>
     <footer>
