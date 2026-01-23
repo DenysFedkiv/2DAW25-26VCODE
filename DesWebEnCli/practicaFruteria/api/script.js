@@ -604,6 +604,7 @@ function statsProductos() {
         for(let id in venta) {
             if(managerProdLista.childElementCount == 0) {
                 let prod = document.createElement("div");
+                let prodTitleCont = document.createElement("div");
                 let prodImg = document.createElement("img");
                 let prodTitle = document.createElement("p");
                 let prodUdVendidas = document.createElement("p");
@@ -611,6 +612,7 @@ function statsProductos() {
                 let prodIngresos = document.createElement("p");
 
                 prod.classList.add("manager-stats-productos-lista-prod");
+                prodTitleCont.classList.add("manager-stats-productos-lista-prod-title-cont");
                 prodImg.classList.add("manager-stats-productos-lista-prod-img");
                 prodTitle.classList.add("manager-stats-productos-lista-prod-title");
                 prodUdVendidas.classList.add("manager-stats-productos-lista-prod-udVendidas");
@@ -623,8 +625,9 @@ function statsProductos() {
                 prodTickets.innerText = 1;
                 prodIngresos.innerText = venta[id]["cantidad"] * venta[id]["producto"]["precio"];
 
-                prod.append(prodImg);
-                prod.append(prodTitle);
+                prodTitleCont.append(prodImg);
+                prodTitleCont.append(prodTitle);
+                prod.append(prodTitleCont);
                 prod.append(prodUdVendidas);
                 prod.append(prodTickets);
                 prod.append(prodIngresos);
@@ -648,6 +651,7 @@ function statsProductos() {
                 }
                 if(!existe) {
                     let prod = document.createElement("div");
+                    let prodTitleCont = document.createElement("div");
                     let prodImg = document.createElement("img");
                     let prodTitle = document.createElement("p");
                     let prodUdVendidas = document.createElement("p");
@@ -655,6 +659,7 @@ function statsProductos() {
                     let prodIngresos = document.createElement("p");
                     
                     prod.classList.add("manager-stats-productos-lista-prod");
+                    prodTitleCont.classList.add("manager-stats-productos-lista-prod-title-cont");
                     prodImg.classList.add("manager-stats-productos-lista-prod-img");
                     prodTitle.classList.add("manager-stats-productos-lista-prod-title");
                     prodUdVendidas.classList.add("manager-stats-productos-lista-prod-udVendidas");
@@ -667,8 +672,9 @@ function statsProductos() {
                     prodTickets.innerText = 1;
                     prodIngresos.innerText = venta[id]["cantidad"] * venta[id]["producto"]["precio"];
                     
-                    prod.append(prodImg);
-                    prod.append(prodTitle);
+                    prodTitleCont.append(prodImg);
+                    prodTitleCont.append(prodTitle);
+                    prod.append(prodTitleCont);
                     prod.append(prodUdVendidas);
                     prod.append(prodTickets);
                     prod.append(prodIngresos);

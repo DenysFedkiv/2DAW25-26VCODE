@@ -194,8 +194,6 @@
         else {
             $where_sql = "";
         }
-                
-        $order_sql .= " " . $direccion;
 
         $consulta = "SELECT * FROM tareas $where_sql ORDER BY $order_sql";
         
@@ -339,7 +337,7 @@
             $tareaR = $stmt->fetch();
 
             http_response_code(201);
-            echo json_encode(["tarea"=>$tareaR]);
+            echo json_encode(["mensaje"=>"Tarea agregada corectamente", "tarea"=>$tareaR]);
             exit;
         }
 

@@ -180,6 +180,44 @@ main {
     width: 40%;
 }
 
+#manager {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#manager-stats-generales {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#manager-stats-productos {
+    display: flex;
+    flex-direction: column;
+}
+
+#manager-stats-productos-cabeza {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#manager-stats-productos-lista {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.manager-stats-productos-lista-prod {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .manager-stats-productos-lista-prod-img {
     width: 100px;
 }
