@@ -1,0 +1,5 @@
+numero,nif,nombre_cliente,importe,estado
+1,23h,ana,1000,PAG,
+2,33h,jose,1500,PTE,
+3,44h,luis,2000,PTE,
+4,55h,pedro,3000,PTE,

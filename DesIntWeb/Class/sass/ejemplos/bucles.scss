@@ -1,0 +1,31 @@
+// for
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    width: (100% / 12) * $i;
+  }
+}
+
+// each
+$estados: (
+  'info': #29b6f6,
+  'success': #66bb6a,
+  'warning': #ffa726,
+  'error': #ef5350
+);
+
+@each $nombre, $color in $estados {
+  .text-#{$nombre} {
+    color: $color;
+  }
+}
+
+// while
+$tamano: 10;
+
+@while $tamano <= 50 {
+  .fs-#{$tamano} {
+    font-size: $tamano + px;
+  }
+  // Incremento manual obligatorio
+  $tamano: $tamano + 10;
+}

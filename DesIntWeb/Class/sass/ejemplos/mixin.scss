@@ -1,0 +1,107 @@
+// ==========================================
+// 1. MIXIN FLEXBOX "TODO EN UNO"
+// ==========================================
+// Este mixin ahorra escribir las 3 líneas repetitivas de flexbox.
+// Permite definir la dirección, justificación y alineación en una sola línea.
+// Valor por defecto: Centrado total en fila (row).
+@mixin flex-box($justify: center, $align: center, $direction: row) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+// ==========================================
+// 2. MIXIN GRID RESPONSIVE AUTOMÁTICO
+// ==========================================
+// Crea una rejilla (grid) que se adapta automáticamente al ancho disponible
+// sin necesidad de escribir Media Queries.
+// Usa la función minmax() para asegurar que las columnas nunca sean más pequeñas
+// que el tamaño mínimo ($min-size).
+@mixin grid-auto-fit($min-size, $gap: 1rem) {
+  display: grid;
+  gap: $gap;
+  // 'auto-fit' llena el espacio disponible.
+  // 'minmax' asegura que si no cabe el mínimo, baje a la siguiente línea.
+  grid-template-columns: repeat(auto-fit, minmax($min-size, 1fr));
+}
+
+// ==========================================
+// 3. MIXIN DEGRADADO AVANZADO (N Colores)
+// ==========================================
+// Genera un degradado lineal aceptando una dirección y una lista variable de colores.
+// El argumento $stops... indica que puede recibir múltiples parámetros de color.
+@mixin gradient($direction, $stops...) {
+  background: nth(nth($stops, 1), 1); // Fallback para navegadores viejos (toma el primer color)
+  background: linear-gradient($direction, $stops);
+}
+
+// ==========================================
+// 4. MIXIN TEXTO TRUNCADO (Ellipsis)
+// ==========================================
+// Corta el texto y añade "..." si excede el ancho máximo definido.
+// Útil para tarjetas de artículos, títulos largos o nombres de usuario.
+@mixin truncate-text($max-width: 100%) {
+  display: inline-block;
+  max-width: $max-width;
+  white-space: nowrap;      // Evita el salto de línea
+  overflow: hidden;         // Oculta lo que sobra
+  text-overflow: ellipsis;  // Añade los tres puntos (...)
+}
+
+// ==========================================
+// 5. MIXIN GESTOR DE BREAKPOINTS (Media Queries)
+// ==========================================
+// Gestiona los puntos de ruptura de forma semántica.
+// Utiliza un mapa de SASS para relacionar nombres (movil, tablet) con píxeles.
+$breakpoints: (
+  'movil': 480px,
+  'tablet': 768px,
+  'desktop': 1024px,
+  'wide': 1200px
+);
+
+@mixin respond-to($breakpoint) {
+  // map-get busca el valor en la lista de arriba
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: map-get($breakpoints, $breakpoint)) {
+      @content; // @content inyecta el código CSS que escribas dentro del mixin
+    }
+  } @else {
+    // Error en consola si usas un nombre que no existe
+    @warn "El breakpoint '#{$breakpoint}' no existe en el mapa.";
+  }
+}
+
+// ==========================================
+// EJEMPLOS DE IMPLEMENTACIÓN (USO REAL)
+// ==========================================
+
+.hero-section {
+  // Uso del Mixin Flex: Centrado verticalmente, espacio entre elementos
+  @include flex-box(space-between, center); 
+  
+  // Uso del Mixin Degradado: De derecha a izquierda, morado a azul
+  @include gradient(to right, #8e2de2, #4a00e0);
+  
+  color: white;
+  padding: 2rem;
+
+  h1 {
+    // Uso de Breakpoints: En tablet o superior, aumenta la fuente
+    font-size: 1.5rem;
+    @include respond-to('tablet') {
+      font-size: 3rem;
+    }
+  }
+}
+
+.product-grid {
+  // Uso del Mixin Grid: Columnas de mínimo 250px, gap de 20px
+  @include grid-auto-fit(250px, 20px);
+}
+
+.card-title {
+  // Uso del Mixin Truncate: Si el título pasa de 200px, pone "..."
+  @include truncate-text(200px);
+}

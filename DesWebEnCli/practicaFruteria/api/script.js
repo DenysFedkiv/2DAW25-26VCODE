@@ -214,12 +214,19 @@ function checkContador(e) {
 
 function checkCaritoDisplay() {
     let carito = document.getElementById("carito");
+    let tiendaCats = document.getElementById("tienda-cats");
 
     if(caritoProductos.childElementCount != 0) {
         carito.style.display = "flex";
+        tiendaDisplay.style.width = "79%";
+        tiendaCats.style.width = "79%";
         calcCaritoTotal();
     }
-    else carito.style.display = "none";
+    else {
+        carito.style.display = "none";
+        tiendaDisplay.style.width = "";
+        tiendaCats.style.width = "";
+    }
 }
 
 function addToCarito(e) {
@@ -290,6 +297,7 @@ function addToCarito(e) {
         caritoProductos.append(prod);
     }
 
+    checkCaritoDisplay();
     calcCaritoTotal();
     guardarCarito();
 }
@@ -590,8 +598,8 @@ function statsGenereal() {
     console.log(ventasTotal);
     console.log(ticketsTotal);
     console.log(mejorProd);
-    ventasTotalEl.innerText = ventasTotal;
-    ticketsTotalEl.innerText = ticketsTotal;
+    ventasTotalEl.innerText = ventasTotal + "€";
+    ticketsTotalEl.innerText = ticketsTotal + " Tickets";
     mejorProdEl.innerText = mejorProd;
 }
 
@@ -623,14 +631,14 @@ function statsProductos() {
                 prodTitle.innerText = venta[id]["producto"]["nombre"];
                 prodUdVendidas.innerText = venta[id]["cantidad"];
                 prodTickets.innerText = 1;
-                prodIngresos.innerText = venta[id]["cantidad"] * venta[id]["producto"]["precio"];
+                prodIngresos.innerText = venta[id]["cantidad"] * venta[id]["producto"]["precio"] + "€";
 
                 prodTitleCont.append(prodImg);
                 prodTitleCont.append(prodTitle);
                 prod.append(prodTitleCont);
                 prod.append(prodUdVendidas);
-                prod.append(prodTickets);
                 prod.append(prodIngresos);
+                prod.append(prodTickets);
                 managerProdLista.append(prod);
             }
             else {
@@ -644,7 +652,7 @@ function statsProductos() {
 
                         prodUdVendidas.innerText = parseInt(prodUdVendidas.innerText) + venta[id]["cantidad"];
                         prodTickets.innerText = parseInt(prodTickets.innerText) + 1;
-                        prodIngresos.innerText = parseFloat(prodIngresos.innerText) + (venta[id]["cantidad"] * venta[id]["producto"]["precio"]);
+                        prodIngresos.innerText = parseFloat(prodIngresos.innerText) + (venta[id]["cantidad"] * venta[id]["producto"]["precio"]) + "€";
                         existe = true;
                         break;
                     }
@@ -670,14 +678,14 @@ function statsProductos() {
                     prodTitle.innerText = venta[id]["producto"]["nombre"];
                     prodUdVendidas.innerText = venta[id]["cantidad"];
                     prodTickets.innerText = 1;
-                    prodIngresos.innerText = venta[id]["cantidad"] * venta[id]["producto"]["precio"];
+                    prodIngresos.innerText = venta[id]["cantidad"] * venta[id]["producto"]["precio"] + "€";
                     
                     prodTitleCont.append(prodImg);
                     prodTitleCont.append(prodTitle);
                     prod.append(prodTitleCont);
                     prod.append(prodUdVendidas);
-                    prod.append(prodTickets);
                     prod.append(prodIngresos);
+                    prod.append(prodTickets);
                     managerProdLista.append(prod);
                 }
             }

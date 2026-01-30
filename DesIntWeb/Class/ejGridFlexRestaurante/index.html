@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo Estructura - Restaurante</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- ========================================
+         HEADER CON NAVEGACIÓN (Flexbox)
+         ======================================== -->
+    <header class="header">
+        <div class="header-contenido">
+            <div class="logo">
+                <span class="logo-icono">🍽️</span>
+                <span class="logo-texto">Logo Web</span>
+            </div>
+            <nav class="navegacion">
+                <a href="#inicio" class="nav-link">Enlace 1</a>
+                <a href="#menu" class="nav-link">Enlace 2</a>
+                <a href="#especialidades" class="nav-link">Enlace 3</a>
+                <a href="#horarios" class="nav-link">Enlace 4</a>
+                <a href="#contacto" class="nav-link nav-link-destacado">Botón Destacado</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ========================================
+         HERO SECTION (Grid + Flexbox centrado)
+         ======================================== -->
+    <section id="inicio" class="hero">
+        <div class="hero-contenido">
+            <h1 class="hero-titulo">Título Principal Hero</h1>
+            <p class="hero-subtitulo">Subtítulo descriptivo de la sección principal</p>
+            <div class="hero-botones">
+                <a href="#" class="btn btn-primario">Botón Primario</a>
+                <a href="#" class="btn btn-secundario">Botón Secundario</a>
+            </div>
+        </div>
+        <div class="hero-info">
+            <div class="hero-info-item">
+                <span class="info-numero">DATO</span>
+                <span class="info-texto">Descripción corta</span>
+            </div>
+            <div class="hero-info-item">
+                <span class="info-numero">DATO</span>
+                <span class="info-texto">Descripción corta</span>
+            </div>
+            <div class="hero-info-item">
+                <span class="info-numero">DATO</span>
+                <span class="info-texto">Descripción corta</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         SECCIÓN MENÚ (Grid con áreas)
+         ======================================== -->
+    <section id="menu" class="seccion-menu">
+        <div class="menu-header">
+            <h2 class="seccion-titulo">Título Sección</h2>
+            <p class="seccion-descripcion">Descripción breve de la sección de contenidos</p>
+        </div>
+
+        <!-- Contenedor principal con Grid Áreas -->
+        <div class="menu-layout">
+            <!-- Sidebar de categorías -->
+            <aside class="menu-categorias">
+                <h3 class="categorias-titulo">Sidebar</h3>
+                <ul class="categorias-lista">
+                    <li class="categoria-item categoria-activa">Opción Activa</li>
+                    <li class="categoria-item">Opción 2</li>
+                    <li class="categoria-item">Opción 3</li>
+                    <li class="categoria-item">Opción 4</li>
+                </ul>
+                <div class="categoria-info">
+                    <p class="categoria-info-texto">Texto informativo adicional en el sidebar para rellenar espacio.</p>
+                </div>
+            </aside>
+
+            <!-- Área principal de platos (Grid responsive con auto-fit) -->
+            <main class="menu-platos">
+                <!-- Seccion 1 -->
+                <div class="categoria-seccion">
+                    <h3 class="categoria-nombre">Subtítulo Categoría 1</h3>
+                    <div class="platos-grid">
+                        <!-- Tarjeta de plato 1 -->
+                        <article class="plato-tarjeta">
+                            <div class="plato-imagen">
+                                <span class="plato-emoji">🥘</span>
+                                <span class="plato-etiqueta">Etiqueta</span>
+                            </div>
+                            <div class="plato-contenido">
+                                <h4 class="plato-nombre">Nombre del Elemento</h4>
+                                <p class="plato-descripcion">Descripción corta del elemento que ocupa varias líneas de texto.</p>
+                                <div class="plato-footer">
+                                    <span class="plato-precio">00.00€</span>
+                                    <span class="plato-alergenos">Info Extra</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="plato-tarjeta">
+                            <div class="plato-imagen">
+                                <span class="plato-emoji">🥘</span>
+                            </div>
+                            <div class="plato-contenido">
+                                <h4 class="plato-nombre">Nombre del Elemento</h4>
+                                <p class="plato-descripcion">Descripción corta del elemento.</p>
+                                <div class="plato-footer">
+                                    <span class="plato-precio">00.00€</span>
+                                    <span class="plato-alergenos">Info Extra</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Tarjeta destacada -->
+                        <article class="plato-tarjeta plato-destacado">
+                            <div class="plato-imagen">
+                                <span class="plato-emoji">⭐</span>
+                                <span class="plato-etiqueta">Destacado</span>
+                            </div>
+                            <div class="plato-contenido">
+                                <h4 class="plato-nombre">Elemento Destacado</h4>
+                                <p class="plato-descripcion">Descripción del elemento destacado.</p>
+                                <div class="plato-footer">
+                                    <span class="plato-precio">00.00€</span>
+                                    <span class="plato-alergenos">Info Extra</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- Seccion 2 -->
+                <div class="categoria-seccion">
+                    <h3 class="categoria-nombre">Subtítulo Categoría 2</h3>
+                    <div class="platos-grid">
+                        <article class="plato-tarjeta">
+                            <div class="plato-imagen">
+                                <span class="plato-emoji">🍲</span>
+                            </div>
+                            <div class="plato-contenido">
+                                <h4 class="plato-nombre">Nombre del Elemento</h4>
+                                <p class="plato-descripcion">Descripción corta del elemento.</p>
+                                <div class="plato-footer">
+                                    <span class="plato-precio">00.00€</span>
+                                    <span class="plato-alergenos"></span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="plato-tarjeta">
+                            <div class="plato-imagen">
+                                <span class="plato-emoji">🍛</span>
+                            </div>
+                            <div class="plato-contenido">
+                                <h4 class="plato-nombre">Nombre del Elemento</h4>
+                                <p class="plato-descripcion">Descripción corta del elemento.</p>
+                                <div class="plato-footer">
+                                    <span class="plato-precio">00.00€</span>
+                                    <span class="plato-alergenos"></span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </section>
+
+    <!-- ========================================
+         ESPECIALIDADES (Grid con posicionamiento span)
+         ======================================== -->
+    <section id="especialidades" class="seccion-especialidades">
+        <h2 class="seccion-titulo">Título Grid Complex</h2>
+        <p class="seccion-descripcion">Ejemplo de grid con elementos de diferentes tamaños (span)</p>
+
+        <div class="especialidades-grid">
+            <!-- Elemento Grande (span row 2) -->
+            <article class="especialidad especialidad-grande">
+                <div class="especialidad-contenido">
+                    <span class="especialidad-icono">⭐</span>
+                    <h3 class="especialidad-titulo">Elemento Grande</h3>
+                    <p class="especialidad-descripcion">Este elemento tiene la clase .especialidad-grande para ocupar 2 filas.</p>
+                    <span class="especialidad-precio">Destacado</span>
+                </div>
+            </article>
+
+            <article class="especialidad">
+                <div class="especialidad-contenido">
+                    <span class="especialidad-icono">🔹</span>
+                    <h3 class="especialidad-titulo">Elemento Normal</h3>
+                    <p class="especialidad-descripcion">Ocupa 1 celda.</p>
+                    <span class="especialidad-precio">Info</span>
+                </div>
+            </article>
+
+            <article class="especialidad">
+                <div class="especialidad-contenido">
+                    <span class="especialidad-icono">🔹</span>
+                    <h3 class="especialidad-titulo">Elemento Normal</h3>
+                    <p class="especialidad-descripcion">Ocupa 1 celda.</p>
+                    <span class="especialidad-precio">Info</span>
+                </div>
+            </article>
+
+            <!-- Elemento Ancho (span column 2) -->
+            <article class="especialidad especialidad-ancha">
+                <div class="especialidad-contenido">
+                    <span class="especialidad-icono">↔️</span>
+                    <h3 class="especialidad-titulo">Elemento Ancho</h3>
+                    <p class="especialidad-descripcion">Este elemento tiene la clase .especialidad-ancha para ocupar 2 columnas.</p>
+                    <span class="especialidad-precio">Info</span>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- ========================================
+         HORARIOS E INFO (Grid + Flexbox)
+         ======================================== -->
+    <section id="horarios" class="seccion-info">
+        <div class="info-grid">
+            <div class="info-bloque info-horarios">
+                <h3 class="info-titulo">Columna 1</h3>
+                <div class="horarios-lista">
+                    <div class="horario-item">
+                        <span class="horario-dia">Item Lista</span>
+                        <span class="horario-horas">Detalle</span>
+                    </div>
+                    <div class="horario-item">
+                        <span class="horario-dia">Item Lista</span>
+                        <span class="horario-horas">Detalle</span>
+                    </div>
+                    <div class="horario-item horario-cerrado">
+                        <span class="horario-dia">Destacado</span>
+                        <span class="horario-horas">Estado</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-bloque info-ubicacion">
+                <h3 class="info-titulo">Columna 2</h3>
+                <div class="ubicacion-contenido">
+                    <p class="ubicacion-direccion">Texto Principal</p>
+                    <p class="ubicacion-ciudad">Texto Secundario</p>
+                    <p class="ubicacion-extra">Detalle extra</p>
+                </div>
+            </div>
+
+            <div class="info-bloque info-contacto" id="contacto">
+                <h3 class="info-titulo">Columna 3</h3>
+                <div class="contacto-contenido">
+                    <a href="#" class="contacto-telefono">📞 Enlace 1</a>
+                    <a href="#" class="contacto-email">✉️ Enlace 2</a>
+                    <p class="contacto-nota">Nota al pie del bloque</p>
+                </div>
+            </div>
+
+            <div class="info-bloque info-redes">
+                <h3 class="info-titulo">Columna 4</h3>
+                <div class="redes-lista">
+                    <a href="#" class="red-social">🔗 Red Social 1</a>
+                    <a href="#" class="red-social">🔗 Red Social 2</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         FOOTER (Grid + Flexbox)
+         ======================================== -->
+    <footer class="footer">
+        <div class="footer-contenido">
+            <div class="footer-logo">
+                <span class="logo-icono">🍽️</span>
+                <span class="logo-texto">Logo Footer</span>
+                <p class="footer-slogan">Eslogan o frase corta del footer.</p>
+            </div>
+
+            <div class="footer-links">
+                <h4 class="footer-titulo">Columna Links</h4>
+                <a href="#" class="footer-link">Enlace Footer 1</a>
+                <a href="#" class="footer-link">Enlace Footer 2</a>
+                <a href="#" class="footer-link">Enlace Footer 3</a>
+            </div>
+
+            <div class="footer-legal">
+                <h4 class="footer-titulo">Columna Legal</h4>
+                <a href="#" class="footer-link">Legal 1</a>
+                <a href="#" class="footer-link">Legal 2</a>
+            </div>
+
+            <div class="footer-newsletter">
+                <h4 class="footer-titulo">Newsletter</h4>
+                <p class="footer-newsletter-texto">Texto descriptivo para el formulario de suscripción.</p>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="Input email" class="newsletter-input">
+                    <button class="newsletter-btn">Botón</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p class="footer-copyright">© 2024 Copyright Footer.</p>
+        </div>
+    </footer>
+</body>
+</html>

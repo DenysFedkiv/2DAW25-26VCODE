@@ -1,0 +1,61 @@
+@mixin button-variant($status) {
+  padding: 10px 20px;
+  border-radius: 4px;
+  color: white;
+  font-weight: bold;
+
+  // Lógica condicional
+  @if $status == 'success' {
+    background-color: #2ecc71; // Verde
+  } @else if $status == 'error' {
+    background-color: #e74c3c; // Rojo
+    border: 1px solid darkred; // Borde extra solo para errores
+  } @else if $status == 'warning' {
+    background-color: #f1c40f; // Amarillo
+    color: #333; // Texto oscuro para mejor contraste
+  } @else {
+    background-color: #3498db; // Azul por defecto (Info)
+  }
+}
+
+// Uso:
+.btn-ok { @include button-variant('success'); }
+.btn-alert { @include button-variant('error'); }
+.btn-generic { @include button-variant('algo-raro'); } // Cae en el @else
+
+@mixin auto-text-color($bg-color) {
+  background-color: $bg-color;
+
+  // Si la luminosidad del fondo es mayor al 50% (es claro)
+  @if lightness($bg-color) > 50% {
+    color: #000000; // Ponemos texto negro
+  } @else {
+    // Si es oscuro
+    color: #ffffff; // Ponemos texto blanco
+  }
+}
+
+// Uso:
+.card-dark { 
+  @include auto-text-color(#003366); // El fondo es azul oscuro -> Texto blanco
+}
+.card-light { 
+  @include auto-text-color(#ccffcc); // El fondo es verde claro -> Texto negro
+}
+
+@mixin avatar($size, $is-circle: true) {
+  width: $size;
+  height: $size;
+  overflow: hidden;
+  
+  // Solo aplicamos border-radius si $is-circle es verdadero
+  @if $is-circle {
+    border-radius: 50%;
+  } @else {
+    border-radius: 4px; // Bordes ligeramente redondeados si es cuadrado
+  }
+}
+
+// Uso:
+.user-icon { @include avatar(50px, true); } // Círculo
+.company-logo { @include avatar(50px, false); } // Cuadrado

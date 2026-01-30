@@ -1,10 +1,10 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Inventario de Productos</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
+@extends('layouts.app')
+@section('title', 'Productos')
+@section('content')
+    <!—AQUÍ PONEMOS EL CÓDIGO CON LA CREACIÓN DE LAS CARDS→
+    <h1>Listado de productos</h1>
+
+        <style>
         body {
             background-color: #f8f9fa;
         }
@@ -49,11 +49,12 @@
             font-size: 0.85rem;
         }
     </style>
-</head>
-<body class="p-4">
 
 <div class="container">
-    <h1 class="mb-5 text-center">Inventario de Productos</h1>
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="mb-0">Inventario de Productos</h1>
+        <a href="{{ route('productos.create') }}" class="btn btn-primary">+ Crear Nuevo</a>
+    </div>
 
     <div class="row g-4">
         @foreach ($productos as $producto)
@@ -71,7 +72,10 @@
                             <span class="badge bg-danger badge-stock">Agotado</span>
                         @endif
                     </div>
-                    <button class="btn btn-danger mt-auto" onclick="borrar({{ $producto->id }})">Eliminar</button>
+                    <div class="d-flex gap-2 mt-3">
+                        <a href="{{ route('productos.edit', $producto->id) }}" class="btn btn-outline-primary btn-sm">Editar</a>
+                        <button type="button" class="btn btn-outline-danger btn-sm" onclick="borrar({{ $producto->id }})">Eliminar</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -104,6 +108,7 @@ async function borrar(id) {
             const card = document.getElementById('fila-' + id);
             card.style.opacity = 0.5;
             setTimeout(() => card.remove(), 500);
+            window.location.reload();
         } else {
             alert('No se pudo eliminar el producto.');
         }
@@ -116,6 +121,4 @@ async function borrar(id) {
 </script>
 
 <script src="../../js/productos.js"></script>
-
-</body>
-</html>
+@endsection
